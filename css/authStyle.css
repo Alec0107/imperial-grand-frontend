@@ -1,0 +1,311 @@
+:root {
+    --primary-color: #fff;
+    --highlight-color: #FBDC95;
+    --background-color: #555555;
+
+    /* Font-color */
+    --text-color-1: #fad37c;
+    --text-color-2: #000000;
+    --text-color-3: #ffffff;
+    --text-color-error: #fa263f;
+    --error-bg:#ffe6e6;
+
+    --border-color-1: #ffffff;
+    --button-color-3: #DBB741;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-subtitle: 'Libre Baskerville', serif;
+    --font-body: 'Inter', sans-serif; /* or any clean default */
+
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    font-size: 16px;
+    letter-spacing: 1px;
+    width: 100vw;
+    height: 100vh;
+    letter-spacing: 1px;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/mainimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    position: fixed;
+    filter: brightness(0.3);
+}
+
+.modal{
+    width: 90%;                /* Flexible: fills screen on small devices */
+    max-width: 800px;
+    height: auto;
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 12px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+
+
+.modal button{
+    background: none;
+    border: none;
+}
+
+.modal .close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+}
+
+
+
+#logo{
+    display: flex;
+    align-items: center;
+    color: var(--text-color-1);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#logo .logo-image{
+    width: 70px;
+    height: 60px;
+}
+
+#logo .text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#logo .title{
+    font-family: var(--font-heading);
+    font-weight: 400; /* bold */
+    font-size: 1.2rem;
+}
+
+#logo .subtitle{
+    font-family: var(--font-subtitle);
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    font-size: 0.7rem;
+}
+
+.modal .txt1{
+    margin-top: 30px;
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+.input-fields-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem 2rem;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px 0px 50px;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    position: relative;
+}
+
+.input-group label{
+    margin-bottom: 0.5rem;
+    color: white;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+}
+
+
+.input-group input{
+    height: 40px;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+}
+
+/* runtime class of the phone number input from intltelphon*/
+.input-group .iti{
+    width: 100%;
+}
+
+#phoneNo{
+  width: 100%;
+}
+
+.input-group svg{
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+
+.input-group .error-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 5px;
+}
+
+
+.input-group .error-message{
+  display: block;
+  color: var(--text-color-error);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  padding: 5px;
+  margin-bottom: 4px;
+}
+
+input.invalid{
+  border: 2px solid var(--text-color-error);
+}
+
+
+
+
+
+.server-container-response{
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0px 50px;
+  display: none;
+}
+
+.server-container-response #error-div{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: var(--error-bg);
+  color: var(--text-color-error);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.tc-container{
+    width: 100%;
+    height: auto;
+    padding: 0px 60px;
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    color: white;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tc-container input{
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.tc-container .highlight-text{
+    color: var(--text-color-1);
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+
+.submit-btn-container{
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: white;
+    gap: 10px;
+}
+
+.submit-btn-container #signup-btn{
+    align-self: start;
+    background: var(--button-color-3);
+    font-family: var(--font-body);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 15px 40px;         /* same size for all */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;           /* ✅ keeps width consistent even if text differs */
+    text-align: center;
+}
+
+
+.submit-btn-container small{
+    align-self: center;
+    font-family: var(--font-body);
+    margin-top: 10px;
+}
+
+.submit-btn-container .highlight-login{
+    color: var(--text-color-1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
