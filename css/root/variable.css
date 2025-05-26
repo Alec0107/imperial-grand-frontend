@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #fff;
+    --highlight-color: #FBDC95;
+    --background-color: #555555;
+
+    /* Font-color */
+    --text-color-1: #fad37c;
+    --text-color-2: #000000;
+    --text-color-3: #ffffff;
+    --text-color-4: #459FFF;
+    --text-color-error: #fa263f;
+
+
+
+    --border-color-1: #ffffff;
+    --button-color-3: #DBB741;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-subtitle: 'Libre Baskerville', serif;
+    --font-body: 'Inter', sans-serif; /* or any clean default */
+
+    /* background*/
+    --error-bg:#ffe6e6;
+    --stale-bg: #E0E0E0;
+}

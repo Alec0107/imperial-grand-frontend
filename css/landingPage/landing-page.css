@@ -1,20 +1,3 @@
-:root {
-  --primary-color: #fff;
-  --highlight-color: #FBDC95;
-
-  /* Font-color */
-  --text-color-1: #fad37c;
-  --text-color-2: #000000;
-  --text-color-3: #ffffff;
-
-  --border-color-1: #ffffff;
-  --button-color-3: #DBB741;
-
-  --font-heading: 'Playfair Display', serif;
-  --font-subtitle: 'Libre Baskerville', serif;
-  --font-body: 'Inter', sans-serif; /* or any clean default */
-
-}
 
 
 html{
@@ -39,7 +22,7 @@ html{
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-image: url("../img/mainimage.jpg");
+  background-image: url("../../img/mainimage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

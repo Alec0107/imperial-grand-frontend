@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <link rel="icon" href="../img/logo.png" type="image/png">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="../../css/root/variable.css">
+  <link rel="stylesheet" href="../../css/authentication/auth-common.css">
+  <link rel="stylesheet" href="../../css/authentication/signup.css">
+  <link rel="stylesheet" href="../../css/authentication/login.css">
+  <link rel="stylesheet" href="../../css/root/reusable-buttons.css">
+
+  <!-- CSS plugin -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+
+
+</head>
+    <body>
+
+        <div class="background"></div>
+
+        <!-- Sign Up modal/dialog -->
+        <div class="auth-modal-signup" id="sign-up" >
+
+          <!-- Logo and header below logo -->
+          <div class="logo">
+            <img class="logo-image" src="../../img/logo.png">
+            <div class="logo-text-container">
+              <h1 class="logo-title">Imperial Grand</h1>
+              <p class="logo-subtitle">Cantonese Cuisine</p>
+            </div>
+          </div>
+
+          <h1 class="sub-heading">Create your account</h1>
+          <!-- Logo and header below logo -->
+
+          <!--********************* SIGN UP INPUT FIELDS *********************-->
+          <form class="input-fields-grid-signup">
+
+            <div class="input-group">
+              <label for="firstName">First Name*</label>
+              <input id="firstName" type="text" placeholder="Input Your First Name" />
+              <svg class="error-icon" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span class="error-message" id="firstName-error" class="error-message"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="lastName">Last Name*</label>
+              <input id="lastName" type="text" placeholder="Input Your Last Name" />
+              <svg class="error-icon" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span class="error-message" id="lastName-error" class="error-message"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email*</label>
+              <input id="email" type="text" placeholder="Input Your Email" />
+              <svg class="error-icon" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span class="error-message" id="email-error" class="error-message"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="phoneNo">Phone No.*</label>
+              <input id="phoneNo" type="text" placeholder="Input Your Phone Number" />
+              <svg  class="error-icon" id="phoneNo-icon" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span class="error-message" id="phoneNo-error" class="error-message"></span>
+            </div>
+
+            <!-- password input field -->
+            <div class="input-group input-pass-group" >
+              <label for="password">Password*</label>
+
+              <div class="input-with-icons">
+                <input id="password" type="password" placeholder="Create Password"/>
+
+                <span class="toggle-pass-icon" id="togglePassword">
+                  <svg id="eye-slash-pass" class="eye-icon" width="20px" height="20px" viewBox="0 0 28.00 28.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path clip-rule="evenodd" d="M22.6928 1.55018C22.3102 1.32626 21.8209 1.45915 21.6 1.84698L19.1533 6.14375C17.4864 5.36351 15.7609 4.96457 14.0142 4.96457C9.32104 4.96457 4.781 7.84644 1.11993 13.2641L1.10541 13.2854L1.09271 13.3038C0.970762 13.4784 0.967649 13.6837 1.0921 13.8563C3.79364 17.8691 6.97705 20.4972 10.3484 21.6018L8.39935 25.0222C8.1784 25.4101 8.30951 25.906 8.69214 26.1299L9.03857 26.3326C9.4212 26.5565 9.91046 26.4237 10.1314 26.0358L23.332 2.86058C23.553 2.47275 23.4219 1.97684 23.0392 1.75291L22.6928 1.55018ZM18.092 8.00705C16.7353 7.40974 15.3654 7.1186 14.0142 7.1186C10.6042 7.1186 7.07416 8.97311 3.93908 12.9239C3.63812 13.3032 3.63812 13.8561 3.93908 14.2354C6.28912 17.197 8.86102 18.9811 11.438 19.689L12.7855 17.3232C11.2462 16.8322 9.97333 15.4627 9.97333 13.5818C9.97333 11.2026 11.7969 9.27368 14.046 9.27368C15.0842 9.27368 16.0317 9.68468 16.7511 10.3612L18.092 8.00705ZM15.639 12.3137C15.2926 11.7767 14.7231 11.4277 14.046 11.4277C12.9205 11.4277 12 12.3906 12 13.5802C12 14.3664 12.8432 15.2851 13.9024 15.3624L15.639 12.3137Z" fill="#000000" fill-rule="evenodd"></path><path d="M14.6873 22.1761C19.1311 21.9148 23.4056 19.0687 26.8864 13.931C26.9593 13.8234 27 13.7121 27 13.5797C27 13.4535 26.965 13.3481 26.8956 13.2455C25.5579 11.2677 24.1025 9.62885 22.5652 8.34557L21.506 10.2052C22.3887 10.9653 23.2531 11.87 24.0894 12.9239C24.3904 13.3032 24.3904 13.8561 24.0894 14.2354C21.5676 17.4135 18.7903 19.2357 16.0254 19.827L14.6873 22.1761Z" fill="#000000"></path></g></svg>
+                  <svg id="eye-open-pass"  class="eye-icon visible" width="20px" height="20px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path clip-rule="evenodd" d="M17.7469 15.4149C17.9855 14.8742 18.1188 14.2724 18.1188 14.0016C18.1188 11.6544 16.2952 9.7513 14.046 9.7513C11.7969 9.7513 9.97332 11.6544 9.97332 14.0016C9.97332 16.3487 12.0097 17.8886 14.046 17.8886C15.3486 17.8886 16.508 17.2515 17.2517 16.2595C17.4466 16.0001 17.6137 15.7168 17.7469 15.4149ZM14.046 15.7635C14.5551 15.7635 15.0205 15.5684 15.3784 15.2457C15.81 14.8566 16 14.2807 16 14.0016C16 12.828 15.1716 11.8764 14.046 11.8764C12.9205 11.8764 12 12.8264 12 14C12 14.8104 12.9205 15.7635 14.046 15.7635Z" fill="#000000" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M1.09212 14.2724C1.07621 14.2527 1.10803 14.2931 1.09212 14.2724C0.96764 14.1021 0.970773 13.8996 1.09268 13.7273C1.10161 13.7147 1.11071 13.7016 1.11993 13.6882C4.781 8.34319 9.32105 5.5 14.0142 5.5C18.7025 5.5 23.2385 8.33554 26.8956 13.6698C26.965 13.771 27 13.875 27 13.9995C27 14.1301 26.9593 14.2399 26.8863 14.3461C23.2302 19.6702 18.6982 22.5 14.0142 22.5C9.30912 22.5 4.75717 19.6433 1.09212 14.2724ZM3.93909 13.3525C3.6381 13.7267 3.6381 14.2722 3.93908 14.6465C7.07417 18.5443 10.6042 20.3749 14.0142 20.3749C17.4243 20.3749 20.9543 18.5443 24.0894 14.6465C24.3904 14.2722 24.3904 13.7267 24.0894 13.3525C20.9543 9.45475 17.4243 7.62513 14.0142 7.62513C10.6042 7.62513 7.07417 9.45475 3.93909 13.3525Z" fill="#000000" fill-rule="evenodd"></path></g></svg>
+                </span>
+              </div>
+
+              <svg  class="error-icon" id="password-error-icon" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span class="error-message" id="password-error-span" ></span>
+
+            </div>
+
+            <!-- confirm password input field-->
+            <div class="input-group input-pass-group">
+              <label for="confirm-pass">Confirm Password*</label>
+
+              <div class="input-with-icons">
+                <input id="confirm-pass" type="password" placeholder="Confirm Your Password" disabled/>
+
+                <span class="toggle-pass-icon" id="toggleConfirmPassword">
+                  <svg id="eye-slash-confirm" class="eye-icon" width="20px" height="20px" viewBox="0 0 28.00 28.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path clip-rule="evenodd" d="M22.6928 1.55018C22.3102 1.32626 21.8209 1.45915 21.6 1.84698L19.1533 6.14375C17.4864 5.36351 15.7609 4.96457 14.0142 4.96457C9.32104 4.96457 4.781 7.84644 1.11993 13.2641L1.10541 13.2854L1.09271 13.3038C0.970762 13.4784 0.967649 13.6837 1.0921 13.8563C3.79364 17.8691 6.97705 20.4972 10.3484 21.6018L8.39935 25.0222C8.1784 25.4101 8.30951 25.906 8.69214 26.1299L9.03857 26.3326C9.4212 26.5565 9.91046 26.4237 10.1314 26.0358L23.332 2.86058C23.553 2.47275 23.4219 1.97684 23.0392 1.75291L22.6928 1.55018ZM18.092 8.00705C16.7353 7.40974 15.3654 7.1186 14.0142 7.1186C10.6042 7.1186 7.07416 8.97311 3.93908 12.9239C3.63812 13.3032 3.63812 13.8561 3.93908 14.2354C6.28912 17.197 8.86102 18.9811 11.438 19.689L12.7855 17.3232C11.2462 16.8322 9.97333 15.4627 9.97333 13.5818C9.97333 11.2026 11.7969 9.27368 14.046 9.27368C15.0842 9.27368 16.0317 9.68468 16.7511 10.3612L18.092 8.00705ZM15.639 12.3137C15.2926 11.7767 14.7231 11.4277 14.046 11.4277C12.9205 11.4277 12 12.3906 12 13.5802C12 14.3664 12.8432 15.2851 13.9024 15.3624L15.639 12.3137Z" fill="#000000" fill-rule="evenodd"></path><path d="M14.6873 22.1761C19.1311 21.9148 23.4056 19.0687 26.8864 13.931C26.9593 13.8234 27 13.7121 27 13.5797C27 13.4535 26.965 13.3481 26.8956 13.2455C25.5579 11.2677 24.1025 9.62885 22.5652 8.34557L21.506 10.2052C22.3887 10.9653 23.2531 11.87 24.0894 12.9239C24.3904 13.3032 24.3904 13.8561 24.0894 14.2354C21.5676 17.4135 18.7903 19.2357 16.0254 19.827L14.6873 22.1761Z" fill="#000000"></path></g></svg>
+                  <svg id="eye-open-confirm"  class="eye-icon visible" width="20px" height="20px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path clip-rule="evenodd" d="M17.7469 15.4149C17.9855 14.8742 18.1188 14.2724 18.1188 14.0016C18.1188 11.6544 16.2952 9.7513 14.046 9.7513C11.7969 9.7513 9.97332 11.6544 9.97332 14.0016C9.97332 16.3487 12.0097 17.8886 14.046 17.8886C15.3486 17.8886 16.508 17.2515 17.2517 16.2595C17.4466 16.0001 17.6137 15.7168 17.7469 15.4149ZM14.046 15.7635C14.5551 15.7635 15.0205 15.5684 15.3784 15.2457C15.81 14.8566 16 14.2807 16 14.0016C16 12.828 15.1716 11.8764 14.046 11.8764C12.9205 11.8764 12 12.8264 12 14C12 14.8104 12.9205 15.7635 14.046 15.7635Z" fill="#000000" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M1.09212 14.2724C1.07621 14.2527 1.10803 14.2931 1.09212 14.2724C0.96764 14.1021 0.970773 13.8996 1.09268 13.7273C1.10161 13.7147 1.11071 13.7016 1.11993 13.6882C4.781 8.34319 9.32105 5.5 14.0142 5.5C18.7025 5.5 23.2385 8.33554 26.8956 13.6698C26.965 13.771 27 13.875 27 13.9995C27 14.1301 26.9593 14.2399 26.8863 14.3461C23.2302 19.6702 18.6982 22.5 14.0142 22.5C9.30912 22.5 4.75717 19.6433 1.09212 14.2724ZM3.93909 13.3525C3.6381 13.7267 3.6381 14.2722 3.93908 14.6465C7.07417 18.5443 10.6042 20.3749 14.0142 20.3749C17.4243 20.3749 20.9543 18.5443 24.0894 14.6465C24.3904 14.2722 24.3904 13.7267 24.0894 13.3525C20.9543 9.45475 17.4243 7.62513 14.0142 7.62513C10.6042 7.62513 7.07417 9.45475 3.93909 13.3525Z" fill="#000000" fill-rule="evenodd"></path></g></svg>
+                </span>
+              </div>
+
+              <span class="error-message" id="confirm-pass-error-span"></span>
+            </div>
+
+          </form>
+          <!-- Input fields-->
+
+          <!-- Error server response box (div)-->
+          <div class="server-container-response">
+            <div class="error-div">
+              <svg width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span id="server-error" class="error-server-message">error-server</span>
+            </div>
+          </div>
+
+          <div class="tc-container">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <p>By signing up, you agree to our
+              <a href="#" class="highlight-text">Terms and Conditions</a> and
+              <a href="#" class="highlight-text">Privacy Policy</a>.</p>
+          </div>
+
+          <div class="signup-btn-container">
+            <button class="reusable-btn" id="signup-btn">
+              <span class="spin-loader"></span> <!-- Add "show" class to display laoding spinner-->
+              <span class="btn-text">Sign up</span>
+            </button>
+            <small>Already have an account? <a href="#" class="highlight-login">Log in</a></small>
+          </div>
+
+
+        </div>
+        <!-- Sign Up modal/dialog -->
+
+
+
+
+
+
+
+
+
+        <!-- Login modal/dialog-->
+        <div class="auth-modal-login" id="login">
+
+          <!-- Logo and header below logo -->
+          <div class="logo">
+            <img class="logo-image" src="../../img/logo.png">
+            <div class="logo-text-container">
+              <h1 class="logo-title">Imperial Grand</h1>
+              <p class="logo-subtitle">Cantonese Cuisine</p>
+            </div>
+          </div>
+
+          <h1 class="sub-heading">Login to your account</h1>
+          <!-- Logo and header below logo -->
+
+          <!--********************* LOGIN INPUT FIELDS *********************-->
+          <form class="input-fields-grid-login">
+        
+            <!-- Email Field-->
+            <div class="input-group">
+              <label for="login-email">Email*</label>
+              <input id="login-email" type="text" placeholder="Input Your Email" /> <!-- Add a class "Invalid" to show red border-->
+              <svg class="error-icon" id="email-error-icon-login" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span class="error-message" id="email-error-span-login"></span>
+            </div>
+
+            <!-- password input field -->
+            <div class="input-group input-pass-group" >
+              <div class="forgot-pass-div">
+                  <label for="login-password">Password*</label>
+                  <p id="forgot-pass">Forgot Password?</p>
+              </div>
+      
+              
+
+              <div class="input-with-icons">
+                <input id="login-password" type="password" placeholder="Create Password"/> <!-- Add a class "Invalid" to show red border-->
+                <span class="toggle-pass-icon" id="togglePassword">
+                  <svg id="eye-slash-pass-login" class="eye-icon" width="20px" height="20px" viewBox="0 0 28.00 28.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path clip-rule="evenodd" d="M22.6928 1.55018C22.3102 1.32626 21.8209 1.45915 21.6 1.84698L19.1533 6.14375C17.4864 5.36351 15.7609 4.96457 14.0142 4.96457C9.32104 4.96457 4.781 7.84644 1.11993 13.2641L1.10541 13.2854L1.09271 13.3038C0.970762 13.4784 0.967649 13.6837 1.0921 13.8563C3.79364 17.8691 6.97705 20.4972 10.3484 21.6018L8.39935 25.0222C8.1784 25.4101 8.30951 25.906 8.69214 26.1299L9.03857 26.3326C9.4212 26.5565 9.91046 26.4237 10.1314 26.0358L23.332 2.86058C23.553 2.47275 23.4219 1.97684 23.0392 1.75291L22.6928 1.55018ZM18.092 8.00705C16.7353 7.40974 15.3654 7.1186 14.0142 7.1186C10.6042 7.1186 7.07416 8.97311 3.93908 12.9239C3.63812 13.3032 3.63812 13.8561 3.93908 14.2354C6.28912 17.197 8.86102 18.9811 11.438 19.689L12.7855 17.3232C11.2462 16.8322 9.97333 15.4627 9.97333 13.5818C9.97333 11.2026 11.7969 9.27368 14.046 9.27368C15.0842 9.27368 16.0317 9.68468 16.7511 10.3612L18.092 8.00705ZM15.639 12.3137C15.2926 11.7767 14.7231 11.4277 14.046 11.4277C12.9205 11.4277 12 12.3906 12 13.5802C12 14.3664 12.8432 15.2851 13.9024 15.3624L15.639 12.3137Z" fill="#000000" fill-rule="evenodd"></path><path d="M14.6873 22.1761C19.1311 21.9148 23.4056 19.0687 26.8864 13.931C26.9593 13.8234 27 13.7121 27 13.5797C27 13.4535 26.965 13.3481 26.8956 13.2455C25.5579 11.2677 24.1025 9.62885 22.5652 8.34557L21.506 10.2052C22.3887 10.9653 23.2531 11.87 24.0894 12.9239C24.3904 13.3032 24.3904 13.8561 24.0894 14.2354C21.5676 17.4135 18.7903 19.2357 16.0254 19.827L14.6873 22.1761Z" fill="#000000"></path></g></svg>
+                  <svg id="eye-open-pass-login"  class="eye-icon visible" width="20px" height="20px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path clip-rule="evenodd" d="M17.7469 15.4149C17.9855 14.8742 18.1188 14.2724 18.1188 14.0016C18.1188 11.6544 16.2952 9.7513 14.046 9.7513C11.7969 9.7513 9.97332 11.6544 9.97332 14.0016C9.97332 16.3487 12.0097 17.8886 14.046 17.8886C15.3486 17.8886 16.508 17.2515 17.2517 16.2595C17.4466 16.0001 17.6137 15.7168 17.7469 15.4149ZM14.046 15.7635C14.5551 15.7635 15.0205 15.5684 15.3784 15.2457C15.81 14.8566 16 14.2807 16 14.0016C16 12.828 15.1716 11.8764 14.046 11.8764C12.9205 11.8764 12 12.8264 12 14C12 14.8104 12.9205 15.7635 14.046 15.7635Z" fill="#000000" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M1.09212 14.2724C1.07621 14.2527 1.10803 14.2931 1.09212 14.2724C0.96764 14.1021 0.970773 13.8996 1.09268 13.7273C1.10161 13.7147 1.11071 13.7016 1.11993 13.6882C4.781 8.34319 9.32105 5.5 14.0142 5.5C18.7025 5.5 23.2385 8.33554 26.8956 13.6698C26.965 13.771 27 13.875 27 13.9995C27 14.1301 26.9593 14.2399 26.8863 14.3461C23.2302 19.6702 18.6982 22.5 14.0142 22.5C9.30912 22.5 4.75717 19.6433 1.09212 14.2724ZM3.93909 13.3525C3.6381 13.7267 3.6381 14.2722 3.93908 14.6465C7.07417 18.5443 10.6042 20.3749 14.0142 20.3749C17.4243 20.3749 20.9543 18.5443 24.0894 14.6465C24.3904 14.2722 24.3904 13.7267 24.0894 13.3525C20.9543 9.45475 17.4243 7.62513 14.0142 7.62513C10.6042 7.62513 7.07417 9.45475 3.93909 13.3525Z" fill="#000000" fill-rule="evenodd"></path></g></svg>
+                </span>
+              </div>
+
+              <svg  class="error-icon" id="password-error-icon-login" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span class="error-message" id="password-error-span-login"></span>
+
+            </div>
+
+          </form> 
+          <!-- Input fields-->
+
+          <!-- Error server response box (div) all errors -->
+          <div class="server-container-response" id="login-server-error-div"> <!-- add "show" class to show the server error response div-->
+            <div class="error-div">
+              <svg width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <span id="server-error-span" class="error-server-message">error-server</span>
+            </div>
+          </div>
+
+          <!-- Error server response box (div) for resend email verif error div -->
+          <div class="server-container-response" id="login-email-error-div"> <!-- add "show" class to show the server error response div-->
+            <div class="error-email-div">
+              <svg width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+              <p class="alert-message">Please verify your email address! 
+                Click <a id="resend-here-tag">here</a> to resend verification email.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Remember me div -->
+          <div class="remember-me-container">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <p>Remember me</p>
+          </div>
+
+
+          <div class="login-btn-container">
+            <button class = "reusable-btn" id="login-btn">
+              <span class="spin-loader"></span> <!-- Add "show" class to display laoding spinner-->
+              <span class="btn-text">Log in</span>
+            </button>
+            <small>Don't have an account? <a href="#" class="highlight-signup">Sign up</a></small>
+          </div>
+
+
+
+
+        </div>
+         <!-- Login modal/dialog-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Email was sent successfully div -->
+        <div class="response-modal" id="success-response-div">
+          <div class="modal-content">
+            <svg id="mail-icon" height="64px" width="64px" version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#DBB742" stroke="#DBB742"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> </style> <g> <path class="st0" d="M66.734,401.582c-5.902,0-11.421-1.551-16.135-4.277l139.049-121.182l12.979,11.294 c10.863,9.44,24.46,14.22,37.93,14.22c13.536,0,27.133-4.78,37.996-14.22l12.973-11.294l47.074,41.038 c5.324-8.971,11.939-17.054,19.613-24.038l-43.093-37.547L446.977,140.54v127.084c12.26,2.236,23.756,6.62,34.136,12.75V124.834 c0-4.404-0.43-8.762-1.236-12.979c-2.175-10.925-7.016-20.922-13.778-29.181c-1.43-1.8-2.921-3.411-4.54-5.022 c-11.978-12.046-28.804-19.56-47.182-19.56H66.734c-18.377,0-35.136,7.514-47.182,19.56c-1.612,1.611-3.102,3.222-4.532,5.022 c-6.768,8.259-11.609,18.256-13.717,29.181C0.43,116.072,0,120.43,0,124.834v244.162c0,9.367,1.987,18.371,5.526,26.502 c3.283,7.762,8.131,14.785,14.026,20.673c1.491,1.491,2.981,2.86,4.593,4.224c11.549,9.561,26.454,15.336,42.589,15.336h280.481 c-8.118-10.032-14.436-21.567-18.412-34.15H66.734z M43.697,101.797c5.962-5.956,13.973-9.561,23.037-9.561h347.645 c9.065,0,17.142,3.606,23.037,9.561c1.047,1.061,2.042,2.243,2.921,3.418L258.128,264.017c-5.029,4.405-11.24,6.581-17.571,6.581 c-6.271,0-12.476-2.176-17.572-6.581L40.85,105.148C41.656,103.973,42.65,102.858,43.697,101.797z M34.136,368.997V140.479 L166,255.51L34.203,370.42C34.136,369.984,34.136,369.494,34.136,368.997z"></path> <path class="st0" d="M428.285,286.484c-46.235,0-83.702,37.48-83.702,83.715c0,46.228,37.467,83.708,83.702,83.708 c46.242,0,83.715-37.48,83.715-83.708C512,323.963,474.527,286.484,428.285,286.484z M441.23,410.236h-20.331v-56.421h-0.242 l-14.744,6.963l-3.076-17.82l20.654-9.441h17.74V410.236z"></path> </g> </g></svg>
+            <h2></h2>
+            <p class="font-ui">We've sent a verification link to <strong class="p-fonts" id="user-email-placeholder"></strong>.</p>
+            <p class="font-ui">Please verify your email to activate your account.</p>
+            <div class="timer-container">
+              <p id="timer-p" class="font-ui">Resend in <strong id="timer"></strong></p>
+            </div>
+            <button id="resend-btn" class="font-ui button" disabled>Resend Verification Email</button>
+            <a href="auth.html?authType=login" class="highlight-login font-ui">Go to Login</a>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- JS Scripts (IntlTelPhone Scripts) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+
+        <!-- Your JS logic -->
+        <script type="module" src="../../js/main.js" defer></script>
+    </body>
+</html>

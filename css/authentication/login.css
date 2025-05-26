@@ -1,0 +1,89 @@
+.auth-modal-login{
+    width: 100%;                /* Flexible: fills screen on small devices */
+    max-width: 500px;
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 12px;
+
+
+    display: none; /** flex **/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.auth-modal-login.show{
+    display: flex;
+}
+
+.input-fields-grid-login{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0rem 2rem;
+    width: 100%;
+    height: auto;
+    padding: 30px 50px 0px 50px;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+
+}
+
+.remember-me-container{
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    color: white;
+    gap: 5px;
+    margin-bottom: 0.3rem;
+    align-items: center;
+}
+
+
+
+.login-btn-container{
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: white;
+    gap: 10px;
+}
+
+#login-btn{
+    background: var(--button-color-3);
+}
+
+#login-btn:hover{
+    background-color: var(--highlight-color);
+}
+
+/** Don't have an account? **/
+.login-btn-container small{
+    align-self: center;
+    font-family: var(--font-body);
+    margin-top: 10px;
+}
+
+.login-btn-container .highlight-signup{
+    color: var(--text-color-1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+

@@ -1,0 +1,111 @@
+/*Sign up modal and elements*/
+.auth-modal-signup{
+    width: 100%;                /* Flexible: fills screen on small devices */
+    max-width: 800px;
+    height: auto;
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 12px;
+
+
+    display: none; /** flex **/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.auth-modal-signup.show{
+  display: flex;
+}
+
+.input-fields-grid-signup{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem 2rem;
+    width: 100%;
+    height: auto;
+    padding: 30px 50px 0px 50px;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+}
+
+/* runtime class of the phone number input from intltelphon*/
+.input-group .iti{
+ width: 100%;
+}
+
+#phoneNo{
+  width: 100%;
+}
+
+.iti__country{
+  width: 250px;
+}
+
+.tc-container{
+    width: 100%;
+    height: auto;
+    padding: 0px 60px;
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    color: white;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tc-container input{
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.tc-container .highlight-text{
+    color: var(--text-color-1);
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Sign up, already have an acc? (container)*/
+.signup-btn-container{
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: white;
+    gap: 10px;
+
+}
+
+#signup-btn{
+    background: var(--button-color-3);
+}
+
+#signup-btn:hover{
+    background-color: var(--highlight-color);
+}
+
+.signup-btn-container small{
+    align-self: center;
+    font-family: var(--font-body);
+    margin-top: 10px;
+}
+
+.signup-btn-container .highlight-login{
+    color: var(--text-color-1);
+    text-decoration: none;
+    font-weight: bold;
+}
+

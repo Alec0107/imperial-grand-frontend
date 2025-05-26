@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Verification Error Response</title>
+  <link rel="stylesheet" href="../../css/root/variable.css">
+  <link rel="stylesheet" href="../../css/email-response-css/email-error.css">
+</head>
+    <body>
+
+
+    <!--modal to show the email verif link expired -->
+      <div class="modal" id="expired-modal">
+        <div class="content-container">
+            <img src="../../icons/icons8-error.gif" width="100" height="100" style="margin: 20px">
+            <h2>Link Expired!</h2>
+          <p class="font-ui" >The link has expired. Please request a new one by clicking the button below.</p>
+           <div class="resend-btn-container">
+              <button class="button resend-btn" id="resend-btn">
+                <span class="loader" style=" display: none" ></span>
+                <span class="btn-text">Request New Link</span>
+              </button>
+           </div>
+        </div>
+      </div>
+
+
+      <!-- modal to show email was already been verified -->
+      <div class="modal" id="verified-modal">
+        <div class="content-container">
+            <img src="../../icons/icons8-error.gif" width="100" height="100" style="margin: 20px">
+            <h2>Already Verified!</h2>
+          <p class="font-ui" >Your email has already been verified. Please log in.</p>
+           <div class="resend-btn-container">
+              <button class="button"  id="login-btn">
+                <span class="loader" style=" display: none" ></span>
+                <span class="btn-text">Continue log in</span>
+              </button>
+           </div>
+        </div>
+      </div>
+
+
+      <div class="modal" id="invalid-modal">
+        <div class="content-container">
+            <img src="../../icons/icons8-error.gif" width="100" height="100" style="margin: 20px">
+            <h2>Invalid Link!</h2>
+          <p class="font-ui" >The verification link is invalid.</p>
+        </div>
+      </div>  
+
+
+      <div class="modal" id="email-sent-succesfully">
+        <div class="content-container">
+            <img src="../../icons/icons8-checkmark.gif" width="100" height="100" style="margin: 20px">
+            <h2 id="email-sent-h2">Email Sent!</h2> 
+          <p class="font-ui" id="email-sent-p"></p>
+           <div class="resend-btn-container">
+              <button class="button close-btn">
+                <span class="btn-text">Close</span>
+              </button>
+           </div>
+        </div>
+
+      </div>
+
+
+
+
+    </body>
+
+    <script src="../../js/email-response-js/email-response.js"></script>
+</html>
