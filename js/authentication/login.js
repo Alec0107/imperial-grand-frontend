@@ -17,6 +17,7 @@ let passSpanErr;
 function initLoginJs(){
     initLoginClassAndId();
     setupLoginBtn();
+    initForgotPass();
 }
 
 function initLoginClassAndId(){
@@ -57,7 +58,6 @@ function setupLoginBtn(){
     });
 }
 
-
 function validateFieldTextLogin(input, svg, span, validatorFn, userKey){
     const result = validatorFn(input.value);
     if(!result.valid){
@@ -70,23 +70,15 @@ function validateFieldTextLogin(input, svg, span, validatorFn, userKey){
 }
 
 
-function showLoadingUi(){
-    spinLoader.classList.add("show");
-    buttonText.textContent = "Logging in...";
+// initialize forgot pass
+function initForgotPass(){
+    document.getElementById("forgot-pass").addEventListener("click", ()=>{
+        console.log("Executing Forgot Pass.....")
+    });
 }
 
-function resetUi(){
-    spinLoader.classList.remove("show");
-    buttonText.textContent = "Log in";
-}
 
-function resetUserObjectlogin(){
-    userObjectLogin.allValid = true;
-    userObjectLogin.userAccount = {
-        email: "",
-        password: ""
-    };
-}
+
 
 
 

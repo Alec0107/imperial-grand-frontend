@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <link rel="icon" href="../../img/logo.png" type="image/png">
+      <title>Forgot Password?</title>
+
+      <link rel="stylesheet" href="../../css/root/variable.css">
+      <link rel="stylesheet" href="../../css/forgot-password/forgot.css">
+      <link rel="stylesheet" href="../../css/root/reusable-buttons.css">
+
+
+    </head>
+
+    <body>
+
+        <div class="modal" id="enter-email-div">
+            <div class="content-container">
+            <img src="../../icons/key-alt-svgrepo-com.svg" width="70" height="70" style="margin: 10px">
+                <div class="header-div">
+                    <h2>Forgot your password?</h2>
+                    <p class="font-ui">A link will be sent to your email to reset your password.</p>
+                </div>
+                <div class="input-btn-div">
+                  <label for="reset-email-input">Email Address</label>
+                  <input class="font-ui" id="reset-email-input" type="text" placeholder="Enter your email address" />
+                  <svg class="error-icon" id="email-error-icon-login" width="15px" height="15px" viewBox="0 0 48.00 48.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000" stroke-width="2.496"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0886 4.55328C23.457 3.81558 24.5096 3.81557 24.878 4.55327L43.86 42.5692C44.192 43.234 43.7084 44.0159 42.9653 44.0159H5.00129C4.25814 44.0159 3.77464 43.234 4.10662 42.5692L23.0886 4.55328ZM21 18C21 16.3431 22.3431 15 24 15C25.6569 15 27 16.3431 27 18V29C27 30.6569 25.6569 32 24 32C22.3431 32 21 30.6569 21 29V18ZM23.9663 34C22.3281 34 21 35.3281 21 36.9663C21 38.6045 22.3281 39.9326 23.9663 39.9326H24.0337C25.6719 39.9326 27 38.6045 27 36.9663C27 35.3281 25.6719 34 24.0337 34H23.9663Z" fill="#ff0000"></path> </g></svg>
+                  <span class="error-message" id="email-error-span-login"></span>
+                  <button class="reusable-btn" id="reset-pass-btn">Reset password</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script type="module" src="../../js/forgot-pass/forgot.js"></script>
+    </body>
+
+</html>

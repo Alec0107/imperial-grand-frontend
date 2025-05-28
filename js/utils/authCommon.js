@@ -1,9 +1,13 @@
 
-/********************** FUNCTIONS NEEDED FOR SENDING SIGN UP REQ TO BACKEND ***************************/
 
-function setButtonStatus(button, isEnable){
-  console.log(`**  Button is disabled: ${isEnable} **`);
-  button.disabled = isEnable;
+//************************************ SEETING REUSABLE BUTTON'S PROPERTIES ************************************
+
+export function disableButton(button){
+  button.disabled = true;
+}
+
+export function enableButton(button){
+  button.disabled = false;
 }
 
 
@@ -16,6 +20,7 @@ function changeTextAndDisplay(text, loader, removeSpinner, textMsg){
     loader.classList.add("show");
   }
 }
+//************************************ SEETING REUSABLE BUTTON'S PROPERTIES ************************************
 
 
 
@@ -23,7 +28,7 @@ function changeTextAndDisplay(text, loader, removeSpinner, textMsg){
 
 function checkStatusCode(statusCode, errorMsg){ // TO CHECK STATUS CODE TO THROW AN EXCEPTION
   console.log(statusCode + ": " + errorMsg);
-  if(statusCode === 409 || statusCode === 400 || statusCode === 429 || statusCode === 401){
+  if(statusCode === 409 || statusCode === 400 || statusCode === 429 || statusCode === 401 || statusCode === 404){
     throw new Error(errorMsg);
   }
 }
@@ -110,18 +115,10 @@ function clearErrorOnInput(input, svg, span){
 
 
 
-//************************************ ENABLE AND DISABLE THE BUTTON ************************************
-
-export function disableButton(button){
-  button.disabled = true;
-}
-
-export function enableButton(button){
-  button.disabled = false;
-}
 
 
 //*********  LOGIN: server error response email not verified ********* //
+
 function showServerErrorResponseLogin(errorMsg){ //SHOW SERVER ERROR RESPONSE DIV ALL TYPES OF ERRORS (FOR LOGIN)
   const loginErrorDiv = document.getElementById("login-server-error-div");
   const errorSpan = document.getElementById("server-error-span");
@@ -147,6 +144,9 @@ function showServerErrorEmailNotFound(email){ //SHOW SERVER ERROR RESPONSE DIV O
 
 }
 
+//*********  LOGIN: server error response email not verified ********* //
+
+
 
 
 
@@ -164,7 +164,6 @@ export {
          checkStatusCode,
          startCountdown,
          changeTextAndDisplay,
-         setButtonStatus,
          showServerErrorResponse, showServerErrorResponseLogin, showServerErrorEmailNotFound,
          clearServerError, 
          showErrorOnInput, clearErrorOnInput,

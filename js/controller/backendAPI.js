@@ -1,6 +1,6 @@
 //import { resetUserObjectlogin } from "../authentication/login.js";
 import { userObject, userObjectLogin, resetUserObjectSignUp, resetUserObjectLogin} from "../userDetailsRelated/userData.js";
-import {checkStatusCode, startCountdown, showServerErrorResponse, showServerErrorResponseLogin, setButtonStatus, changeTextAndDisplay, showSuccessUi, disableButton, showServerErrorEmailNotFound} from "../utils/authCommon.js";
+import {checkStatusCode, startCountdown, showServerErrorResponse, showServerErrorResponseLogin, changeTextAndDisplay, showSuccessUi, disableButton, showServerErrorEmailNotFound, enableButton} from "../utils/authCommon.js";
 
 // GLOBAL VAR
 let resendButton; // resend
@@ -25,7 +25,8 @@ async function sendToBackend(){
 
   // disable button & change the text button to ("Submitting...")
   
-  setButtonStatus(signupBtn, true);
+  //setButtonStatus(signupBtn, true);
+  disableButton(signupBtn);
   changeTextAndDisplay(textBtn, loaderBtn, false, "Submitting...");
 
 
@@ -44,7 +45,8 @@ async function sendToBackend(){
     console.log(response);
     console.log(result);
 
-    setButtonStatus(signupBtn, false);
+    //setButtonStatus(signupBtn, false);
+    enableButton(signupBtn);
     changeTextAndDisplay(textBtn, loaderBtn, true, "Sign up");
 
     showSuccessUi(result.data.email); // show success ui and email that was sent the email verif to
@@ -57,7 +59,8 @@ async function sendToBackend(){
 
   }catch (err){
     console.error("Caught error in submit Signup:", err);
-    setButtonStatus(signupBtn, false);
+    //setButtonStatus(signupBtn, false);
+    enableButton(signupBtn);
     changeTextAndDisplay(textBtn, loaderBtn, true, "Sign up");
 
     resetUserObjectSignUp(); // ✅ reset on network or unexpected errors
@@ -73,7 +76,6 @@ async function sendToBackend(){
 
 // SUBMIT LOG IN
 async function submitLogin(){
-  console.log(`Email: ${userObjectLogin.userAccount.email} Password: ${userObjectLogin.userAccount.password}`);
 
   const loginUrl = `http://localhost:8080/api/v1/auth/login`;
   const requestObject = {
@@ -90,19 +92,18 @@ async function submitLogin(){
   const loaderButton = loginButton.querySelector(".spin-loader");
 
   // show the spin-loader from authCommon.js
-  setButtonStatus(loginButton, true);
+  //setButtonStatus(loginButton, true);
+  disableButton(loaderButton);
   changeTextAndDisplay(textButton, loaderButton, false, "Loggin in...");
-  console.log(`Request: ${JSON.stringify(requestObject)}`);
 
   try{
     const response = await fetch(loginUrl, requestObject);
     const result = await response.json();
 
-
     if(!response.ok){
       checkStatusCode(result.statusCode, result.message);
     }
-    setButtonStatus(loginButton, false);
+    enableButton(loginButton);
     changeTextAndDisplay(textButton, loaderButton, true, "Log in");
 
     console.log(response);
@@ -110,21 +111,21 @@ async function submitLogin(){
    
 
   }catch(err){
-    console.error("Caught error in submit Login:", err);
     console.error("Error message:", err.message);
-    setButtonStatus(loginButton, false);
+    enableButton(loginButton);
     changeTextAndDisplay(textButton, loaderButton, true, "Log in");
 
     if (err instanceof TypeError && err.message === "Failed to fetch") {
       showServerErrorResponseLogin("Cannot connect to the server. Please ensure the backend is running.");
       resetUserObjectLogin(); // Reset Clean up
+
     } else if(err.message.toLowerCase().includes("email is not verified")){
       // show serverErrorResponse but wiht inner html
       console.log("Executing innerHTML");
-      // call the function fomr authCommon to show innerHTML
+      // show click here to resend email verif UI
       showServerErrorEmailNotFound(userObjectLogin.userAccount.email);
-      
       setUpResendBtn(userObjectLogin.userAccount.email);
+
     }else {
       showServerErrorResponseLogin(err.message); // You missed this!
       resetUserObjectLogin(); // Reset Clean up 
@@ -163,7 +164,6 @@ function setUpResendBtn(email){
         document.querySelector(".timer-container").classList.remove("hidden"); // show the div timer-container
         disableButton(resendButton);
         startCountdown(result.data.expiryTime);  // show timer
-
 
       }catch (err){
         // show a modal or dialog that indicates resend req was failed or too many attempts

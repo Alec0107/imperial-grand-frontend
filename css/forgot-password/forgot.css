@@ -1,0 +1,128 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body{
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-body);
+}
+
+#enter-email-div{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  padding: 30px;
+  background: #ffffff;
+  position: fixed;
+
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+.content-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.header-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px ;
+}
+
+.header-div h2{
+  font-weight: 500; /* bold */
+  font-size: 1.5rem;
+}
+
+.header-div p{
+    text-align: center;
+    font-weight: 100;
+}
+
+.font-ui{
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+
+
+
+.input-btn-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.input-btn-div label{
+    align-self: self-start;
+    color: rgb(0, 0, 0);
+    font-size: 0.6rem;
+}
+
+
+
+.input-btn-div input{
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem 1rem;
+    border: 0.5px solid rgb(187, 187, 187);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background-color: white;
+    margin-top: 5px;
+}
+.input-btn-div button{
+    width: 100%;
+    background-color: var(--button-color-3);
+}
+
+.input-btn-div button:hover{
+    background-color: var(--highlight-color);
+}
+
+
+.error-icon{
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+.error-message{
+  width: 100%;
+  display: block;
+  color: var(--text-color-error);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  padding: 5px;
+  margin-bottom: 4px;
+}
+.error-icon.show{
+  display: block;
+}
+
+
+input.show{
+  border: 2px solid var(--text-color-error);
+}
