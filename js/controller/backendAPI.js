@@ -70,7 +70,6 @@ async function sendToBackend(){
     }else {
       showServerErrorResponse(err.message)
     }
-
   }
 }
 
@@ -99,7 +98,7 @@ async function submitLogin(){
   try{
     const response = await fetch(loginUrl, requestObject);
     const result = await response.json();
-
+    
     if(!response.ok){
       checkStatusCode(result.statusCode, result.message);
     }

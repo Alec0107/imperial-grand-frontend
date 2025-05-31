@@ -8,6 +8,7 @@
     --text-color-2: #000000;
     --text-color-3: #ffffff;
     --text-color-4: #459FFF;
+    --text-color-5: rgb(95, 95, 95);
     --text-color-error: #fa263f;
 
 
@@ -22,4 +23,7 @@
     /* background*/
     --error-bg:#ffe6e6;
     --stale-bg: #E0E0E0;
+
+    /* border */
+    --border-1:rgb(186, 186, 186)
 }

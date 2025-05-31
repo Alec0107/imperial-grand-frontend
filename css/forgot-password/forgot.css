@@ -12,22 +12,32 @@ html, body{
   font-family: var(--font-body);
 }
 
-#enter-email-div{
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  padding: 30px;
-  background: #ffffff;
-  position: fixed;
+/** LOGO DIV  **/
+.logo-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.icon{
+    width: 70px;
+    height: 60px;
+    margin: 20px;
+    border-radius: 10px;
 }
 
 
+#enter-email-div{
+  width: 100%;
+  max-width: 330px;
+  height: auto;
+  padding: 0px 0.5rem;
+  background: #ffffff;
+  margin: 0px auto;
+}
 
 
+/** MAIN CONTAINER DIV **/
 .content-container{
     width: 100%;
     height: 100%;
@@ -60,12 +70,13 @@ html, body{
 .font-ui{
   font-size: 0.8rem;
   text-decoration: none;
+  color: var(--text-color-5);
 }
 
 
 
 
-.input-btn-div{
+.input-group{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -73,40 +84,43 @@ html, body{
     position: relative;
 }
 
-.input-btn-div label{
-    align-self: self-start;
+.input-group label{
+    margin-bottom: 0.3rem;
     color: rgb(0, 0, 0);
-    font-size: 0.6rem;
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+    align-self: self-start;
 }
 
 
-
-.input-btn-div input{
+.input-group input{
     width: 100%;
     height: 40px;
     padding: 0.5rem 1rem;
-    border: 0.5px solid rgb(187, 187, 187);
+    border: 0.5px solid var(--border-1);
     border-radius: 6px;
     font-size: 0.8rem;
     background-color: white;
     margin-top: 5px;
+    color: black;
 }
-.input-btn-div button{
+
+
+#reset-pass-btn{
     width: 100%;
     background-color: var(--button-color-3);
 }
 
-.input-btn-div button:hover{
+#reset-pass-btn:hover{
     background-color: var(--highlight-color);
 }
-
 
 .error-icon{
   display: none;
   position: absolute;
   right: 1rem;
   top: 30%;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
 }
 
 .error-message{
@@ -118,6 +132,7 @@ html, body{
   padding: 5px;
   margin-bottom: 4px;
 }
+
 .error-icon.show{
   display: block;
 }

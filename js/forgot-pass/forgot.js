@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 function initGlobalVar(){
-  div = document.querySelector(".input-btn-div");
+  div = document.querySelector(".input-group");
   input = div.querySelector("input");
   svg = div.querySelector("svg");
   span = div.querySelector("span");
