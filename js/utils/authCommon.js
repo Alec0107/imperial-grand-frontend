@@ -1,4 +1,4 @@
-
+import { showInfoMsg } from "../authentication/resendverification.js";
 
 //************************************ SEETING REUSABLE BUTTON'S PROPERTIES ************************************
 
@@ -27,7 +27,7 @@ function changeTextAndDisplay(text, loader, removeSpinner, textMsg){
 /************ FUNCTIONS NEEDED FOR SENDING SIGN UP REQ TO BACKEND (SHOW SERVER'S ERROR AND CLEAN UP) ****************/
 
 function checkStatusCode(statusCode, errorMsg){ // TO CHECK STATUS CODE TO THROW AN EXCEPTION
-  console.log(statusCode + ": " + errorMsg);
+  console.log("‼️" + statusCode + ": " + errorMsg);
   if(statusCode === 409 || statusCode === 400 || statusCode === 429 || statusCode === 401 || statusCode === 404){
     throw new Error(errorMsg);
   }
@@ -63,12 +63,19 @@ function clearServerError(){ //CLEAR SERVER ERROR RESPONSE DIV
 
 // FUNCTION to show the timer modal response email verif
 function showSuccessUi(email){
+  // remove the sign up modal
   document.getElementById("sign-up").classList.remove("show");
+
+  // show the timer modal
   document.getElementById("success-response-div").classList.add("show");
+
   const modalContent = document.querySelector(".modal-content");
   const header = modalContent.querySelector("h2");
   header.textContent = "Thanks for signing up!";
-  document.getElementById("user-email-placeholder").textContent = email;
+
+  // show info msg (e.g., email has been sent successfully )
+  showInfoMsg(`A verification email has been sent to <strong>${email}.</strong> Please check your inbox.`);
+  
 }
 
 /** TIMER FOR RESEND EMAIL VERIFICATION **/
@@ -131,13 +138,19 @@ function showServerErrorResponseLogin(errorMsg){ //SHOW SERVER ERROR RESPONSE DI
   }
 }
 
-function showServerErrorEmailNotFound(email){ //SHOW SERVER ERROR RESPONSE DIV ONLY FOR EMAIL NOT VERIIFED ERROR (FOR LOGIN)
+function showServerErrorEmailNotVerified(email){ //SHOW SERVER ERROR RESPONSE DIV ONLY FOR EMAIL NOT VERIIFED ERROR (FOR LOGIN)
   document.getElementById("login-email-error-div").classList.add("show");
   
   document.getElementById("resend-here-tag").addEventListener("click", ()=>{
     document.getElementById("login").classList.remove("show");
     document.getElementById("success-response-div").classList.add("show");
-    document.getElementById("user-email-placeholder").textContent = email;
+    
+    // didnt received an email?
+    const infoMsg = document.createElement("p");
+    infoMsg.classList.add("font-ui");
+    infoMsg.innerHTML = `Didn’t receive the email? <br>You can request a new one below.`
+    document.querySelector(".info-msg").appendChild(infoMsg);
+
     document.querySelector(".timer-container").classList.add("hidden");
     enableButton(document.getElementById("resend-btn"));
   });
@@ -147,6 +160,7 @@ function showServerErrorEmailNotFound(email){ //SHOW SERVER ERROR RESPONSE DIV O
 //*********  LOGIN: server error response email not verified ********* //
 
 
+//*********  RESEND EMAIL VERIF: this is after user tries to login but he is not verified so he needs to request a new verif email link ********* //
 
 
 
@@ -164,7 +178,7 @@ export {
          checkStatusCode,
          startCountdown,
          changeTextAndDisplay,
-         showServerErrorResponse, showServerErrorResponseLogin, showServerErrorEmailNotFound,
+         showServerErrorResponse, showServerErrorResponseLogin, showServerErrorEmailNotVerified,
          clearServerError, 
          showErrorOnInput, clearErrorOnInput,
          showSuccessUi};

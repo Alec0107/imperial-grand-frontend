@@ -1,6 +1,6 @@
 import { initLoginJs } from "./authentication/login.js";
 import { initSignUpJs } from "./authentication/signup.js";
-import { setUpResendBtn } from "./controller/backendAPI.js";
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -69,15 +69,15 @@ function liveEventPassword(){
   const eyeOpen = document.getElementById("eye-open-pass");
 
   document.getElementById("password").addEventListener("input", function (){
-    this.type = "text";
+    this.type = "password";
     const passInputValLength = this.value.trim().length;
     const confirmPassInput = document.getElementById("confirm-pass");
     const confirmErrorSpan = document.getElementById("confirm-pass-error-span");
 
 
     // eye toggle
-    eyeOpen.classList.remove("visible");
-    eyeSlash.classList.add("visible");
+    eyeSlash.classList.remove("visible");
+    eyeOpen.classList.add("visible");
 
     // confirm pass btn enable / disable
 

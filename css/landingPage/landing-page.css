@@ -1,26 +1,29 @@
 
-
-html{
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
 *{
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* prevents horizontal scrollbar */
+  box-sizing: border-box;
+}
 
 
 .hero{
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .background{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
   position: absolute;
   background-image: url("../../img/mainimage.jpg");
   background-size: cover;
@@ -31,7 +34,7 @@ html{
 }
 
 .layout{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   z-index: 1;
@@ -42,7 +45,7 @@ html{
 
 
 header {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -100,7 +103,7 @@ header {
 
 #nav-link a:hover {
   color: var(--text-color-1);
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 500;
   cursor: pointer;
 }
@@ -166,12 +169,12 @@ button {
 
 main{
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 12rem;
+  margin-top: 15rem;
   text-align: center;
 }
 
@@ -227,7 +230,11 @@ main{
   color: var(--text-color-3);
   letter-spacing: 0.5px;
   font-weight: 100;
+  margin: 0px auto;
+}
 
+.card{
+  border: 2px solid black;
 }
 
 
@@ -237,34 +244,119 @@ main{
 
 
 
+/* SECTION WRAPPER BG */
+.experience-wrapper{
+  background-color: var(--background-color-1);
+}
+
+/** SECTION (EXPERIENCE) **/
+.experience-section{
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  padding: 60px 80px;
+  margin: 0px auto;
+
+}
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr;
+  grid-template-rows: auto 0.5fr 0.5fr;
+  gap: 2rem;
+  grid-template-areas: 
+  "header header"
+  "portrait image-1"
+  "portrait image-2";
+
+}
+
+.header    { grid-area: header; }
+.portrait  { grid-area: portrait; }
+.image-1   { grid-area: image-1; }
+.image-2   { grid-area: image-2; }
+
+.header{
+  font-size: 2rem;
+  font-family: var(--font-heading);
+}
+
+.experience-image{
+  position: relative;
+  overflow: hidden;
+}
+
+/* image */
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  position: relative;
+  z-index: 0; /* ← just this line is what you needed */
+}
+
+/* overlay */
+.experience-image .overlay {
+  position: absolute;
+  inset: 0;
+  background:rgba(0, 0, 0, 0.2); /* Light by default */
+  z-index: 1;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.experience-image:hover .overlay {
+  background:rgba(0, 0, 0, 0.5); /* Darker on hover */
+  cursor: pointer;
+}
 
 
 
+.info-div{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  margin: 10px 0px;
+  width: 100%;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+}
+
+.info-div h2{
+  font-size: 2rem;
+  font-family: var(--font-heading);
+}
+
+.info-div p{
+  font-size: 0.7rem;
+  font-family: var(--font-body);
+}
+
+.experience-image {
+  border-radius: 16px;
+
+}
 
 
+/* circle arrow inside the image */
+.circle-arrow{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  z-index: 2;
+  top: 3%;
+  right: 5%;
+  border-radius: 50%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  cursor: pointer;
+}
 
 
 

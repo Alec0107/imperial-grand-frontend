@@ -6,7 +6,7 @@ const userObject = {
     email: "",
     password: "",
     phoneNumber: "",
-    dob: "2005-10-24"
+    dob: ""
   }
 }
 

@@ -49,12 +49,13 @@ html, body{
 
 
 
+/** HEADER DIV (h2, p) **/
 .header-div{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin-bottom: 30px ;
+    margin-bottom: 10px ;
 }
 
 .header-div h2{
@@ -140,4 +141,51 @@ html, body{
 
 input.show{
   border: 2px solid var(--text-color-error);
+}
+
+
+/** ERROR DIV above the form **/
+.flash-container{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.flash-full{
+    width: 100%;
+    background-color: rgb(218, 245, 213);
+    padding: 1rem;
+
+    border-radius: 0.5rem;
+    display: none;
+    align-items: center;
+    position: relative;
+}
+
+.flash-full p {
+    color: var(--text-color-6);
+    line-height: 1.5;
+}
+
+.flash-full svg{
+    display: none;
+    position: absolute;
+    height: 1rem;
+    right: 1rem;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    fill: #e53935; /* or any other color */
+    cursor: pointer;
+}
+
+.flash-full svg.show{
+    display: block;
+}
+
+.flash-full svg:hover{
+  fill: #ad2929;
+}
+
+.flash-full.show{
+  display: block;
 }

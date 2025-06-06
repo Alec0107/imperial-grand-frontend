@@ -25,6 +25,13 @@ html, body{
 }
 
 
+.font-ui{
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text-color-5);
+}
+
+
 
 /** Add to common auth css **/
 .logo{
@@ -195,8 +202,6 @@ input.invalid{
 
 
 
-
-
 .server-container-response{
   width: 100%;
   margin-bottom: 10px;
@@ -228,7 +233,7 @@ input.invalid{
   background-color: var(--error-bg);
   color: var(--text-color-error);
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   gap: 10px;
 }
 
@@ -290,9 +295,6 @@ input.invalid{
   align-items: center;
 }
 
-#mail-icon{
-  margin-bottom: 10px;
-}
 
 .modal-content h2{
   font-family: var(--font-body);
@@ -317,22 +319,15 @@ input.invalid{
   display: none;
 }
 
-.button{
-  display: flex;
-  width: auto;
-  font-family: var(--font-body);
-  color: #9E9E9E;
-  padding: 10px 15px;         /* same size for all */
-  margin: 10px 0px;
-
-  border: none;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+#resend-btn{
+  align-self: center;
+  margin: 10px;
+  width: 70%;
+  background-color: var(--button-color-3);
 }
 
 #resend-btn:disabled{
   background: var(--stale-bg);
-  cursor: not-allowed;
 }
 
 #resend-btn:enabled{
@@ -342,10 +337,9 @@ input.invalid{
 }
 
 #resend-btn:enabled:hover{
-  background: var(--highlight-color);
+  background-color: var(--highlight-color);
 }
 
-.highlight-login{
-  color: var(--text-color-1);
-}
+
+
 /** RESPONSE CSS **/

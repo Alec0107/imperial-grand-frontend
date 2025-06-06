@@ -1,6 +1,18 @@
-import { userObject } from "../userDetailsRelated/userData.js";
-import { sendToBackend } from "../controller/backendAPI.js";
-import { clearServerError, clearErrorOnInput, showErrorOnInput } from "../utils/authCommon.js";
+import { API } from "../APIurl/api.js"; 
+import { userObject, resetUserObjectSignUp} from "../userDetailsRelated/userData.js";
+import { submitResendVerification } from "./resendverification.js";
+import { clearServerError, 
+          clearErrorOnInput, 
+          showErrorOnInput, 
+          showSuccessUi,
+          disableButton, 
+          enableButton,
+          changeTextAndDisplay, 
+          checkStatusCode,
+          startCountdown, 
+          showServerErrorResponse
+          } from "../utils/authCommon.js";
+
 
 let iti;
 
@@ -11,7 +23,7 @@ function initSignUpJs(){
 
 
 
-//************************************ PHONE NUMBER (INTTELPHONE RELATED) ************************************
+//************************************ PHONE NUMBER (INTTELPHONE RELATED) *******************************/
 function initIntTelPhone() {
   const phoneInput = document.getElementById("phoneNo");
 
@@ -23,13 +35,17 @@ function initIntTelPhone() {
 
 }
 
-//************************************ SIGN UP BUTTON INITIALIZATION ************************************
+//************************************ SIGN UP BUTTON INITIALIZATION ************************************/
 function setSubmitSignUpBtn() {
   const submitBtn = document.getElementById("signup-btn");
   submitBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
+
     clearServerError();
+
+    // Recalculate allValid fresh every time
+    userObject.allValid = true; // assume true first
 
     // const form = document.getElementsByClassName("input-fields-grid")[0];
     // const divs = form.querySelectorAll("div");
@@ -58,15 +74,81 @@ function setSubmitSignUpBtn() {
 
     console.log(userObject.userAccount);
     console.log("Sending to backend...");
-    sendToBackend();
+    submitSignUp();
 
   });
 
 }
 
 
+//************************************ SIGN UP FETCH INITIALIZATION ************************************/
+// SUBMIT SIGN UP 
+async function submitSignUp(){
+  //localStorage.setItem("userEmail", userObject.userAccount.email);
+  const registerURL = API.authentication.register; // Backend URL for register endpoint 
+  const object = {
+    method: "POST",
+    headers : {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify(userObject.userAccount)
+  }
 
-/************************************* ITERATIONS OF DIVS CLASSES *************************************/
+  const signupBtn = document.getElementById("signup-btn");
+  const textBtn   = signupBtn.querySelector(".btn-text");
+  const loaderBtn = signupBtn.querySelector(".spin-loader"); 
+
+  // disable button & change the text button to ("Submitting...")
+  
+  //setButtonStatus(signupBtn, true);
+  disableButton(signupBtn);
+  changeTextAndDisplay(textBtn, loaderBtn, false, "Submitting...");
+
+
+  try{
+    const response = await fetch(registerURL, object);
+    const result = await response.json();
+
+    // check if the response is success
+    if(!response.ok){
+      console.log(response);
+      console.log(result);
+      checkStatusCode(result.statusCode, result.message);
+    }
+
+    console.log(response);
+    console.log(result);
+
+    //setButtonStatus(signupBtn, false);
+    enableButton(signupBtn);
+    changeTextAndDisplay(textBtn, loaderBtn, true, "Sign up");
+
+    showSuccessUi(result.data.email); // show success ui and email that was sent the email verif to
+    startCountdown(result.data.expiryTime);  // show timer
+
+    // initialize the resend email verification link button once registration is success
+    submitResendVerification(userObject.userAccount.email);
+
+    //resetUserObjectSignUp(); // ✅ reset userObject after successful signup
+
+  }catch (err){
+    console.error("Caught error in submit Signup:", err);
+
+    if(err instanceof TypeError && err.message === "Failed to fetch"){
+      showServerErrorResponse("Cannot connect to the server. Please ensure the backend is running.");
+    }else {
+      showServerErrorResponse(err.message)
+    }
+  }finally{
+    resetUserObjectSignUp(); // ✅ reset on network or unexpected errors
+    //setButtonStatus(signupBtn, false);
+    enableButton(signupBtn);
+    changeTextAndDisplay(textBtn, loaderBtn, true, "Sign up");
+  }
+}
+
+
+/************************************* ITERATIONS OF DIVS CLASSES ***************************************/
 // class: input-group
 function validateInputGroup(div){
   const input = div.querySelector("input");

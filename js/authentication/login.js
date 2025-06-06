@@ -1,7 +1,17 @@
-import { clearServerError, clearErrorOnInput, showErrorOnInput} from "../utils/authCommon.js";
-import { userObjectLogin } from "../userDetailsRelated/userData.js";
+import { API } from "../APIurl/api.js";
+import { userObjectLogin, resetUserObjectLogin } from "../userDetailsRelated/userData.js";
+import { submitResendVerification } from "./resendverification.js";
+import { clearServerError, 
+         clearErrorOnInput, 
+         showErrorOnInput, 
+         disableButton, 
+         enableButton, 
+         changeTextAndDisplay, 
+         checkStatusCode, 
+         showServerErrorResponseLogin, 
+         showServerErrorEmailNotVerified,} from "../utils/authCommon.js";
 import { validateEmail, validatePassword} from "../authentication/signup.js"
-import { submitLogin } from "../controller/backendAPI.js";
+
 
 let spinLoader;
 let buttonText;
@@ -17,7 +27,6 @@ let passSpanErr;
 function initLoginJs(){
     initLoginClassAndId();
     setupLoginBtn();
-    initForgotPass();
 }
 
 function initLoginClassAndId(){
@@ -58,6 +67,70 @@ function setupLoginBtn(){
     });
 }
 
+//************************************ LOGIN FETCH INITIALIZATION ************************************/
+
+// SUBMIT LOG IN
+async function submitLogin(){
+
+  const loginUrl = API.authentication.login; // Backend URL for login endpoint
+  const requestObject = {
+    method: "POST", // 👈 now it's correct
+    headers: {
+      "Content-Type" :  "application/json"
+    },
+    credentials: "include", // REQUIRED to receive/set HttpOnly cookie
+    body: JSON.stringify(userObjectLogin.userAccount)
+  };
+
+  const loginButton = document.getElementById("login-btn");
+  const textButton = loginButton.querySelector(".btn-text");
+  const loaderButton = loginButton.querySelector(".spin-loader");
+
+  // show the spin-loader from authCommon.js
+  //setButtonStatus(loginButton, true);
+  disableButton(loaderButton);
+  changeTextAndDisplay(textButton, loaderButton, false, "Loggin in...");
+
+  try{
+    const response = await fetch(loginUrl, requestObject);
+    const result = await response.json();
+    
+    if(!response.ok){
+      checkStatusCode(result.statusCode, result.message);
+    }
+    enableButton(loginButton);
+    changeTextAndDisplay(textButton, loaderButton, true, "Log in");
+
+    console.log(response);
+    console.log(result);
+   
+
+  }catch(err){
+    console.error("Error message:", err.message);
+
+    if (err instanceof TypeError && err.message === "Failed to fetch") {
+      showServerErrorResponseLogin("Cannot connect to the server. Please ensure the backend is running.");
+      resetUserObjectLogin(); // Reset Clean up
+
+    } else if(err.message.toLowerCase().includes("email is not verified")){
+      // show serverErrorResponse but wiht inner html
+      console.log("Executing innerHTML");
+      // show click here to resend email verif UI
+      showServerErrorEmailNotVerified(userObjectLogin.userAccount.email);
+      submitResendVerification(userObjectLogin.userAccount.email);
+
+    }else {
+      showServerErrorResponseLogin(err.message); // You missed this!
+      resetUserObjectLogin(); // Reset Clean up 
+    }
+  }finally{
+    enableButton(loginButton);
+    changeTextAndDisplay(textButton, loaderButton, true, "Log in");
+  }
+}
+
+
+//************************************ VALIDATION ******************************************************/
 function validateFieldTextLogin(input, svg, span, validatorFn, userKey){
     const result = validatorFn(input.value);
     if(!result.valid){
@@ -70,12 +143,7 @@ function validateFieldTextLogin(input, svg, span, validatorFn, userKey){
 }
 
 
-// initialize forgot pass
-function initForgotPass(){
-    document.getElementById("forgot-pass").addEventListener("click", ()=>{
-        console.log("Executing Forgot Pass.....")
-    });
-}
+
 
 
 

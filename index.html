@@ -8,6 +8,7 @@
     
   <link rel="stylesheet" href="css/root/variable.css"> 
   <link rel="stylesheet" href="css/landingPage/landing-page.css">
+  <link rel="stylesheet" href="css/landingPage/backdrop.css">
 </head>
 
     <body>
@@ -89,9 +90,87 @@
 
           </section>
 
+          <div class="experience-wrapper">
+              <section class="experience-section">
 
+                <div class="experience-grid">
+
+                  <h2 class="header">The Imperial Grand Experience</h2>
+
+                  <div class="experience-image portrait" id="portrait">
+                    <img src="/img/modal-feature-images/Madame-Fan.jpg">
+                    
+                    <div class="overlay"></div> 
+
+                    <div class="info-div">
+                      <h2>Timeless Elegance</h2>
+                      <p>Our interiors blend tradition and luxury to create a warm, sophisticated ambiance</p>
+                    </div>
+
+                    <div class="circle-arrow"><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>
+               
+                  </div>
+
+                  <div class="experience-image image-1" id="image-1">
+                    <img src="/img/modal-feature-images/image2-feature-modal.jpg">
+
+                      <div class="overlay"></div> 
+                      
+                      <div class="info-div">
+                        <h2>Perfect for Celebrations</h2>
+                        <p>Host birthdays, anniversaries, and private events in style with our bespoke dining spaces.</p>
+                      </div>
+
+                      <div class="circle-arrow"><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>
+               
+                  </div>
+
+                  <div class="experience-image image-2" id="image-2">
+                    <img src="/img/modal-feature-images/image3-feature-modal.jpg">
+
+                      <div class="overlay"></div> 
+
+                     <div class="info-div">
+                        <h2>Authentic Cantonese Cuisine</h2>
+                       <p>From handcrafted dim sum to signature seafood dishes, enjoy flavors passed down through generations.</p>
+                     </div>
+
+                      <div class="circle-arrow"><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>
+               
+                  </div>
+
+                </div>
+              </section>
+          </div>
+
+
+          <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+          
+
+          <div id="experience-modal" class="experience-modal">
+            
+            <svg class="close-modal-btn" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_LG"> <path id="Vector" d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001" stroke="#000000" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+            
+            <div class="modal-content">
+
+              <div class="image-wrapper">
+                 <img class="modal-image">
+                 <div class="dot-container">
+                    <!-- span little circles will be loaded in javascript based on the size of array -->
+                 </div>
+              </div>
+
+              <div class="modal-text">
+                <h2 class="modal-title"></h2>
+                <p class="modal-description"></p>
+              </div>
+
+            </div>
+
+          </div>
 
         
+     <script src="/js/landingPage/landing-page.js"></script>     
     </body>
  
 </html>

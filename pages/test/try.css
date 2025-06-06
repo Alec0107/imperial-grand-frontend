@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+html, body{
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-body);
+}
+
+.modal{
+    background-color: aqua;
+    height: 400px;
+    width: 600px;
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+
+}
+
+.content{
+    background-color: beige;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    height: 100%;
+}
+
+.main-box{
+    background-color: brown;
+    grid-row: span 2;
+    
+}
+
+.side-box{
+    background-color: aquamarine;
+}

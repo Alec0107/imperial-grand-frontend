@@ -1,3 +1,4 @@
+import { API } from "../APIurl/api.js";
 // global var
 let tokenId = "";
 let statusView = "";
@@ -17,7 +18,6 @@ function getUrlParams(){
     params = new URLSearchParams(window.location.search);
     statusView = params.get("status");
     console.log(`Status: ${statusView} \nTokenID: ${tokenId}`);
-
 }
 
 function initViewModal(){
@@ -41,15 +41,11 @@ function initViewModal(){
 
 
 function initResendBtn(){
-  document.getElementById("resend-btn").addEventListener("click", sendResendEmailLink);
-}
+  document.getElementById("resend-btn").addEventListener("click", async function(e){
 
-
-async function sendResendEmailLink(e){
     e.preventDefault();
 
-
-    const resendUrl = `http://localhost:8080/api/v1/auth/inbox-resend-verification?tokenId=${tokenId}`;
+    const resendUrl = API.authentication.resendVerificationToken(tokenId); // Backend URL for resend email verification endpoint via user's emailTokenId
     const object = {
         method: "POST", 
         headers: {
@@ -75,16 +71,17 @@ async function sendResendEmailLink(e){
         console.log(err);
     }
 
-    function changeModal(maskedEmail){
-        // remove the previous show class
-        document.getElementById("expired-modal").classList.remove("show");  
+  });
+}
 
-        // add the shw class to the email-sent-succ div to show the modal 
-        document.getElementById("email-sent-succesfully").classList.add("show");
-        //set the p tag text  
-        document.getElementById("email-sent-p").innerHTML= `A new verification link has been sent to <strong>${maskedEmail}</strong>.`;
+function changeModal(maskedEmail){
+    // remove the previous show class
+    document.getElementById("expired-modal").classList.remove("show");  
 
-    }
+    // add the show class to the email-sent-succ div to show the modal 
+    document.getElementById("email-sent-succesfully").classList.add("show");
+    //set the p tag text  
+    document.getElementById("email-sent-p").innerHTML= `A new verification link has been sent to <strong>${maskedEmail}</strong>.`;
 
 }
 
