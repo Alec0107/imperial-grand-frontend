@@ -1,4 +1,4 @@
-import { API } from "../APIurl/api.js";
+import { API, authApi, getDeviceIdFromCookie } from "../APIurl/api.js";
 import { userObjectLogin, resetUserObjectLogin } from "../userDetailsRelated/userData.js";
 import { submitResendVerification } from "./resendverification.js";
 import { clearServerError, 
@@ -27,6 +27,7 @@ let passSpanErr;
 function initLoginJs(){
     initLoginClassAndId();
     setupLoginBtn();
+    fetchProfile();
 }
 
 function initLoginClassAndId(){
@@ -54,6 +55,10 @@ function setupLoginBtn(){
         //  validate email and pass and set the userobject valid to either true/false
         validateFieldTextLogin(emailInput, emailSvgErr, emailSpanErr, validateEmail, "email");
         validateFieldTextLogin(passwordInput, passSvgErr, passSpanErr, validatePassword, "password");
+        // get rememeberMe value
+        const rememberMe = document.getElementById("rememberMe").checked;
+        userObjectLogin.userAccount.rememberMe = rememberMe; // either true or false
+        console.log("Remember Me checked?", rememberMe); // true or false
 
         if(!userObjectLogin.allValid){
             console.log("Input Fields Login Error! Unable to send to the backend server");
@@ -71,13 +76,20 @@ function setupLoginBtn(){
 
 // SUBMIT LOG IN
 async function submitLogin(){
-
+  const rawDeviceId = getDeviceIdFromCookie();
   const loginUrl = API.authentication.login; // Backend URL for login endpoint
+ 
+    const headers = {
+      "Content-Type" :  "application/json",
+    }
+
+  if(rawDeviceId && rawDeviceId.trim() !== "" && rawDeviceId.trim().toLowerCase !== "null"){
+    headers["x-device-id"] = rawDeviceId.trim();
+  }
+
   const requestObject = {
     method: "POST", // 👈 now it's correct
-    headers: {
-      "Content-Type" :  "application/json"
-    },
+    headers: headers,
     credentials: "include", // REQUIRED to receive/set HttpOnly cookie
     body: JSON.stringify(userObjectLogin.userAccount)
   };
@@ -103,7 +115,10 @@ async function submitLogin(){
 
     console.log(response);
     console.log(result);
-   
+    const rememberMe = (userObjectLogin.userAccount.rememberMe) ?  "User wanted to be remembered!" : "User doesn't wanted to be remembered!";
+    
+    console.log(rememberMe);
+  
 
   }catch(err){
     console.error("Error message:", err.message);
@@ -166,6 +181,23 @@ function validateFieldTextLogin(input, svg, span, validatorFn, userKey){
 
 
 
+function fetchProfile(){
+  document.getElementById("test1").addEventListener("click", async ()=>{
+    
+    const response = await authApi(API.user.profile, {
+      headers:{
+        "Content-type" : "application/json"
+      },
+    });
+    console.log("original request...")
+    console.log(response);
+
+    const result = await response.json();
+    console.log(result);
+
+  });
+}
+
 
 
 
@@ -174,3 +206,4 @@ function validateFieldTextLogin(input, svg, span, validatorFn, userKey){
 export {
     initLoginJs
 }
+

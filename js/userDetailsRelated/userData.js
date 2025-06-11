@@ -14,7 +14,8 @@ const userObjectLogin = {
   allValid: true,
   userAccount : {
     email: "",
-    password: ""
+    password: "",
+    rememberMe: false
   }
 }
 
