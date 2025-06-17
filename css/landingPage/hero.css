@@ -1,0 +1,245 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+html, body {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-color: black;
+}
+
+
+.hero-container{
+    background-color: rgb(0, 0, 0);
+}
+
+.hero-container-content{
+    width: 100%;
+    height: auto;
+    max-width: 1500px;
+    padding: 100px 50px 150px 50px;
+    margin: 0px auto;
+    display: flex;
+}
+
+
+.hero-text{
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px;
+  position: relative; /* needed for child absolute element */
+  z-index: 2;
+  gap: 50px;
+}
+
+
+.hero-heading{
+  color: var(--text-color-1);
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 10rem;
+  position: static;
+  z-index: 3;
+}
+
+
+.grand-word{
+    position: absolute;
+    z-index: 3;
+    top: 190px;
+    right: -250px;
+    font-size: 10rem;
+}
+
+
+.hero-text p{
+    margin-top: 100px;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: white;
+    line-height: 2;
+}
+
+
+.reusable-btn{
+    width: auto;
+    align-self: start;
+    font-family: var(--font-body);
+    color: var(--text-color-3);
+    background-color: var(--button-color-3);
+    letter-spacing: 1px;
+    padding: 15px 20px;     /* same size for all */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;           /* ✅ keeps width consistent even if text differs */
+    text-align: center;
+    gap: 5px;
+    justify-content: center;
+    border: none;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+#menu-btn{
+    background-color: white;
+    border: 2px solid var(--button-color-3);
+    color: var(--text-color-2);
+}
+
+
+.hero-image{
+  position: relative;
+  z-index: 1;
+  width: 60%;
+}
+
+.hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+
+
+
+
+
+
+
+
+/* SECTION WRAPPER BG */
+.experience-wrapper{
+  background-color: var(--background-color-7);
+}
+
+/** SECTION (EXPERIENCE) **/
+.experience-section{
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  padding: 60px 80px;
+  margin: 0px auto;
+
+}
+.experience-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  grid-template-rows: auto 0.7fr 0.5fr;
+  gap: 2rem;
+  grid-template-areas: 
+  "header header"
+  "portrait image-1"
+  "portrait image-2";
+
+}
+
+.header    { grid-area: header; }
+.portrait  { grid-area: portrait; }
+.image-1   { grid-area: image-1; }
+.image-2   { grid-area: image-2; }
+
+.header{
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  color: var(--text-color-3);
+}
+
+.experience-image{
+  position: relative;
+  overflow: hidden;
+}
+
+/* image */
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  position: relative;
+  z-index: 0; /* ← just this line is what you needed */
+}
+
+/* overlay */
+.experience-image .overlay {
+  position: absolute;
+  inset: 0;
+  background:rgba(0, 0, 0, 0.2); /* Light by default */
+  z-index: 1;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.experience-image:hover .overlay {
+  background:rgba(0, 0, 0, 0.5); /* Darker on hover */
+  cursor: pointer;
+}
+
+
+
+.info-div{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  margin: 10px 0px;
+  width: 100%;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+}
+
+.info-div h2{
+  font-size: 2rem;
+  font-family: var(--font-heading);
+}
+
+.info-div p{
+  font-size: 1rem;
+  font-family: var(--font-body);
+  opacity: 0.8;
+}
+
+.experience-image {
+  border-radius: 16px;
+
+}
+
+
+/* circle arrow inside the image */
+.circle-arrow{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  z-index: 2;
+  top: 3%;
+  right: 5%;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+

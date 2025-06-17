@@ -6,20 +6,24 @@
   <link rel="icon" href="img/logo.png" type="image/png">
   <title>Imperial Grand</title>
     
+  <link rel="stylesheet" href="css/landingPage/hero.css"> 
   <link rel="stylesheet" href="css/root/variable.css"> 
-  <link rel="stylesheet" href="css/landingPage/landing-page.css">
   <link rel="stylesheet" href="css/landingPage/backdrop.css">
+  <link rel="stylesheet" href="css/landingPage/specialty-section.css">
+  <link rel="stylesheet" href="css/landingPage/footer.css">
+  <link rel="stylesheet" href="css/landingPage/navbar.css">
+
 </head>
 
     <body>
 
 
-          <section class="hero">
+          <!-- <section class="hero">
             <div class="background"></div>
 
             <div class="layout">
               <header>
-                  <!-- logo,name/ nav links / auth links (login, register)-->
+                  logo,name/ nav links / auth links (login, register)
                   <div id="logo">
                     <img class="logo-image" src="img/logo.png">
                     <div class="text-container">
@@ -32,12 +36,17 @@
                     <ul>
                       <li>
                         <a>
-                          <span>About Us</span>
+                          <span>Home</span>
                         </a>
                       </li>
                       <li>
                         <a>
-                          <span>Our Menu</span>
+                          <span>About</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <span>Menu</span>
                         </a>
                       </li>
                       <li>
@@ -47,12 +56,7 @@
                       </li>
                       <li>
                         <a>
-                          <span>Reviews</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a>
-                          <span>Contact Us</span>
+                          <span>Contact</span>
                         </a>
                       </li>
                     </ul>
@@ -71,24 +75,97 @@
                 <div id="top-text">
                   <h1>Imperial Grand</h1>
                   <h2>Crafted with heritage, served with elegance.</h2>
-                  <p>
+                   <p>
                     At Imperial Grand, every meal is a tribute to timeless Cantonese flavors,<br> lovingly prepared using classic recipes and premium <br> ingredients.
-                  </p>
+                  </p> 
                 </div>
 
                 <div id="bot-text">
                   <button id="book-btn">Book Your Table</button>
-                  <small>Secure your spot for an unforgettable dining <br> experience</small>
+                  <small>Secure your spot for an unforgettable dining <br> experience</small> 
                 </div>
 
-
-                
               </main>
 
 
             </div>
 
-          </section>
+          </section> -->
+
+
+
+
+
+
+          <header class="navbar">
+
+              <div id="logo">
+
+                <img class="logo-image" src="img/logo.png">
+                <div class="text-container">
+                  <h1 class="title">Imperial Grand</h1>
+                  <p class="subtitle">Cantonese Cuisine</p>
+                </div>
+                
+              </div>
+
+              <nav class="nav-links"> 
+                    <ul>
+                      <li><a><span>Home</span></a></li>
+                       <li><a><span>About</span></a></li>
+                       <li><a><span>Menu</span></a></li>
+                       <li><a><span>Reserve</span></a></li>
+                       <li><a><span>Contact</span></a></li>
+                    </ul>
+              </nav>
+
+              <div id="auth-link">
+                  <a href="pages/authentication/auth.html?authType=login"><button class="auth-btn" id="login-btn">Login</button></a>
+                  <a href="pages/authentication/auth.html?authType=signup"><button class="auth-btn" id="signup-btn">Sign up</button></a>
+              </div>
+          </header>
+
+
+
+
+          <div class="hero-container">
+
+            <div class="hero-container-content">
+
+                  <div class="hero-text">
+                    <h1>
+                      <span class="hero-heading">IMPERIAL</span><br>
+                      <span class="hero-heading grand-word">GRAND</span>
+                    </h1>
+                    
+                    <p>
+                      Welcome to Imperial Grand Cantonese — where timeless Cantonese flavors meet modern dining. 
+                      Experience handcrafted dim sum, signature seafood, and exquisite banquet dishes prepared 
+                      by our master chefs. From family gatherings to elegant events, we serve tradition with a touch of luxury.
+                    </p>
+
+                    <div class="buttons">
+                      <button class="reusable-btn">BOOK A TABLE</button>
+                      <button class="reusable-btn" id="menu-btn">VIEW MENU</button>
+                    </div>
+                  </div>
+
+                  <div class="hero-image">
+                    <img src="/img/hero.jpg" alt="Chef plating Cantonese dish" />
+                  </div>
+            </div>
+
+          
+          </div>
+
+
+
+
+
+
+
+
+
 
           <div class="experience-wrapper">
               <section class="experience-section">
@@ -168,6 +245,62 @@
             </div>
 
           </div>
+
+
+
+          <section class="about-us-section">
+
+              <div class="about-us">
+                <div class="text-info">
+                  <h1>A Singapore restaurant offering modern Cantonese cuisine</h1>
+                  <p>Imperial Grand blends Cantonese heritage with modern sophistication — from expertly roasted meats and delicate dim sum to nourishing herbal soups.<br><br> 
+                    Join us for an immersive dining experience in a refined yet welcoming space, where every dish tells a story of southern Chinese flavors.
+                  </p>
+                </div>
+              </div>
+        
+          </section>
+
+
+
+
+
+
+
+
+          <section class="footer-section">
+
+            
+            <div class="contact-us-div">
+              <h1>Do you have <br>any questions?</h1>
+              <button>Contact Us</button>
+            </div>
+           
+            <span></span>
+      
+            <div class="information-div" >
+                <div class="address indiv-div">
+                  <h2>ADDRESS</h1>
+                  <p class="footer-font">Level 3<br>The Ritz-Carlton, Millenia <br>Singapore<br>7 Raffles Avenue<br>Singapore, 039799</p>
+                </div>
+              
+                <div class="contact indiv-div">
+                  <h2>CONTACT US</h1>
+                   <p class="footer-font">+(65) 6434-5286<br>rc.sinrz.summerpavilion@ritzcarlton.com</p> 
+                </div>
+
+                <div class="hours indiv-div">
+                  <h2>HOURS</h1>
+                   <p class="footer-font">Daily<br><br>Lunch: 11.30 a.m. to 2.30 p.m.<br>Dinner: 6.30 p.m. to 10.30 p.m. </p> 
+                </div>
+            </div>
+
+            <p class="footer-font" style="margin-bottom: 30px;">Copyright © 2025 Imperial Grand. All Rights Reserved.</p>
+              
+          </section>
+
+
+
 
         
      <script src="/js/landingPage/landing-page.js"></script>     

@@ -64,7 +64,7 @@ function setupLoginBtn(){
             console.log("Input Fields Login Error! Unable to send to the backend server");
             return;
         }
-
+        
         console.log(userObjectLogin.userAccount);
         // calling controller (backendAPI.js file)
         // fn: submitLogin

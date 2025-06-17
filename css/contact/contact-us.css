@@ -1,0 +1,132 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+html, body {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-color: var(--background-color-2);
+}
+
+
+.contact-us{
+    height: 100vh;
+    background-color: var(--background-color-7);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.contact-us-content{
+    margin: 0px auto;
+    max-width: 700px;
+    width: 100%;
+}
+
+.contact-us-header h1{
+    text-align: center;
+    color: var(--text-color-1);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 4rem;
+    padding: 50px;
+}
+
+
+.contact-us-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.font{
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.contact-us-form input{
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact-us-form div button{
+    width: 100%;
+    text-align: start;
+    padding: 15px;
+    position: relative;
+    background-color: var(--background-color-3);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-us-form div button svg{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+
+.dropdown {
+  position: relative; /* ✅ Makes .subject-options position relative to this */
+}
+
+
+
+.subject-options{
+    display: block;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+    top: 120%;
+    padding: 5px;
+
+    /* Transition setup */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.subject-options.open{
+    max-height: 350px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.subject-options li{
+    list-style: none;
+    padding: 20px;
+    background-color: white;
+}
+
+.subject-options li:hover{
+    background-color: var(--background-color-8);
+    cursor: pointer;
+}
+
+
+
+
+#message{
+    min-height: 150px;
+    vertical-align: top;
+    padding: 15px;
+    resize: none;
+    overflow: hidden;
+    line-height: 1.9;
+}

@@ -45,6 +45,7 @@ const experienceData = [
     ];
 
 document.addEventListener("DOMContentLoaded", function(){
+    initScrollNavbar();
     initGlobalVar();
     initModalContent();
     initThreeCardImages();
@@ -103,63 +104,60 @@ function initThreeCardImages(){
 }
 
 
-// to show data in the modal
 function showModalData(index){
     const data = experienceData[index];
-
-    currentDataIndex = index; // save the current data index
-    currentImageIndex = 0 // set to 0 current image so wehenever the card is clicked its always starts at 0 index
+    
+    currentDataIndex = index;
+    currentImageIndex = 0;
 
     document.querySelector(".modal-title").innerHTML = data.title; // append the title
     document.querySelector(".modal-description").innerHTML = data.description; // append the description
     document.querySelector(".modal-image").src = data.imageUrl[currentImageIndex]; // append the image
 
-    renderDots(data.imageUrl.length);// creating the dots
+    renderDots(data.imageUrl.length);
 
     slideInterval = setInterval(()=>{
-        currentImageIndex = (currentImageIndex + 1) % data.imageUrl.length; // update the image index 
-        updateImageShown(); // update the image shown based on the index
-    }, 4000)
+        currentImageIndex = (currentImageIndex + 1) % data.imageUrl.length;
+        updateImageShown();
+        console.log(`Image Index: ${currentImageIndex}`);
+    }, 2000)
 
     showModalUI();
 }
 
 
 function renderDots(length){
-    const dotContainer = document.querySelector(".dot-container"); //get the dot container div
 
-    dotContainer.innerHTML = ``; // clear the dot contianer div
+ const dotContainer = document.querySelector(".dot-container"); //get the dot container div
+ dotContainer.innerHTML =  ``;
 
-    for(let i = 0; i < length; i++){
-        const dot = document.createElement("p");
-        dot.classList.add("dot");
+ for(let i = 0; i < length; i++){
+    const dot = document.createElement("p");
+    dot.classList.add("dot");
 
-        if(i === currentImageIndex) dot.classList.add("active"); // add the active class in current index image
+    if( i === currentImageIndex) dot.classList.add("active");
 
-        dot.dataset.index = i;
+    dot.dataset.index = i;
 
-        dot.addEventListener("click", ()=>{
-            currentImageIndex = parseInt(dot.dataset.index);
-            const images = experienceData[currentDataIndex].imageUrl;
-            document.querySelector(".modal-image").src = images[currentImageIndex];
-            renderDots(length);
-        });
+    dot.addEventListener("click", ()=>{
+        currentImageIndex = parseInt(dot.dataset.index);
+        const images = experienceData[currentDataIndex].imageUrl;
+        document.querySelector(".modal-image").src = images[currentImageIndex];
+        renderDots(length);
+    });
+    dotContainer.appendChild(dot);
+ }
 
-        dotContainer.appendChild(dot);
-    }
-
- 
 }
 
 function updateImageShown(){
-    const data = experienceData[currentDataIndex]; // get the current data index
-    const currentImage = data.imageUrl[currentImageIndex]; // get the current image 
-    const dots = document.querySelectorAll(".dot"); // get all dots in a div
+    const data = experienceData[currentDataIndex];
+    const currentImage = data.imageUrl[currentImageIndex];
+    const dots = document.querySelectorAll(".dot");
 
-    document.querySelector(".modal-image").src = currentImage; // show the updated current image
+    document.querySelector(".modal-image").src = currentImage;
 
- 
-    dots.forEach(p => p.classList.remove("active")); // remove or clear the active dot classes
+    dots.forEach(p=> p.classList.remove("active"));
 
     if(dots[currentImageIndex]){
         dots[currentImageIndex].classList.add("active");
@@ -168,64 +166,75 @@ function updateImageShown(){
 }
 
 
+
+
+
+// to show data in the modal
 // function showModalData(index){
 //     const data = experienceData[index];
-//     const imageSize = data.imageUrl.length;
 
-//     currentDataIndex = index;
-//     console.log(data.title);
+//     currentDataIndex = index; // save the current data index
+//     currentImageIndex = 0 // set to 0 current image so wehenever the card is clicked its always starts at 0 index
 
-//     document.querySelector(".modal-title").innerHTML = data.title;
-//     document.querySelector(".modal-description").innerHTML = data.description;
-//     document.querySelector(".modal-image").src = data.imageUrl[0];
+//     document.querySelector(".modal-title").innerHTML = data.title; // append the title
+//     document.querySelector(".modal-description").innerHTML = data.description; // append the description
+//     document.querySelector(".modal-image").src = data.imageUrl[currentImageIndex]; // append the image
 
-//     // add little circles/dots
-//     createDots(imageSize)
+//     renderDots(data.imageUrl.length);// creating the dots
 
 //     slideInterval = setInterval(()=>{
-//         currentImageIndex = (currentImageIndex + 1) % data.imageUrl.length;
-//         updateImage(data);
-//     }, 4000);
+//         currentImageIndex = (currentImageIndex + 1) % data.imageUrl.length; // update the image index 
+//         updateImageShown(); // update the image shown based on the index
+//     }, 4000)
 
-//     showModalUI();    
+//     showModalUI();
 // }
 
-// function createDots(size){
-//     const dotDiv = document.querySelector(".dot-container");
 
-//     dotDiv.innerHTML = ``;
+// function renderDots(length){
+//     const dotContainer = document.querySelector(".dot-container"); //get the dot container div
 
-//     for(let i = 0; i < size; i++){
-//         const spanDot = document.createElement("span");
-//         spanDot.classList.add("dot");
-//         if(i === currentImageIndex) spanDot.classList.add("active");
+//     dotContainer.innerHTML = ``; // clear the dot contianer div
 
-//         spanDot.dataset.index = i;
+//     for(let i = 0; i < length; i++){
+//         const dot = document.createElement("p");
+//         dot.classList.add("dot");
 
-//         spanDot.addEventListener("click", () => {
-//             currentImageIndex = parseInt(spanDot.dataset.index);
+//         if(i === currentImageIndex) dot.classList.add("active"); // add the active class in current index image
+
+//         dot.dataset.index = i;
+
+//         dot.addEventListener("click", ()=>{
+//             currentImageIndex = parseInt(dot.dataset.index);
 //             const images = experienceData[currentDataIndex].imageUrl;
 //             document.querySelector(".modal-image").src = images[currentImageIndex];
-//             createDots(size);
+//             renderDots(length);
 //         });
 
-//         dotDiv.appendChild(spanDot);
+//         dotContainer.appendChild(dot);
 //     }
+
+ 
 // }
 
-// function updateImage(){
-//     const data = experienceData[currentDataIndex];
+// function updateImageShown(){
+//     const data = experienceData[currentDataIndex]; // get the current data index
+//     const currentImage = data.imageUrl[currentImageIndex]; // get the current image 
+//     const dots = document.querySelectorAll(".dot"); // get all dots in a div
 
-//     document.querySelector(".modal-image").src = data.imageUrl[currentImageIndex];
+//     document.querySelector(".modal-image").src = currentImage; // show the updated current image
 
-//     const dots = document.querySelectorAll(".dot");
-
-//     dots.forEach(dot => dot.classList.remove("active"));
+ 
+//     dots.forEach(p => p.classList.remove("active")); // remove or clear the active dot classes
 
 //     if(dots[currentImageIndex]){
 //         dots[currentImageIndex].classList.add("active");
 //     }
+
 // }
+
+
+
 
 function showModalUI(){
     modalContainer.style.display = "block"
@@ -239,4 +248,21 @@ function removeModalUI(){
     modalContainer.classList.remove("show");
     modalContainer.classList.add("hidden");
     backDrop.classList.add("hidden");
+}
+
+function initScrollNavbar(){
+    // capture lastScrolledY
+    let lastScrolledY = window.scrollY;
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener(`scroll`, () => {
+        let currentScrollY = window.scrollY;
+        if(currentScrollY > lastScrolledY){
+            navbar.classList.add("hidden");
+        }else{
+            navbar.classList.remove("hidden");
+        }
+        lastScrolledY = currentScrollY;
+    });
+
 }

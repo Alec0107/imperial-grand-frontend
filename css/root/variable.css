@@ -5,8 +5,14 @@
     --background-color-1:#f7e9c7;
     --background-color-2:#000000;
     --background-color-3:#ffffff;
+    --background-color-4: #FBDC95;
+    --background-color-5: #6c2625;
+    --background-color-6:#1a1919;
+    --background-color-7:#611818;
+    --background-color-8:#e0dfdf;
     --modal-background-1: #000000;
     --modal-background-2: #f3e1b6;
+
 
     /* Font-color */
     --text-color-1: #fad37c;
@@ -15,6 +21,7 @@
     --text-color-4: #459FFF;
     --text-color-5: rgb(95, 95, 95);
     --text-color-6: #67d275;
+    --text-color-7: #fff3d8;
     --text-color-error: #fa263f;
 
 

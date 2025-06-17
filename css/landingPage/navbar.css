@@ -1,0 +1,78 @@
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  color: rgb(255, 255, 255);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.navbar.hidden{
+    transform: translateY(-100%);
+}
+
+#logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container{
+    color: var(--text-color-1);
+    line-height: 20px;
+}
+
+.text-container p{
+    font-size: 0.8rem;
+}
+
+.logo-image{
+    width: 70px;
+}
+
+
+.nav-links ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav-links li a span{
+    font-size: 1rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+}
+
+
+
+.auth-btn{
+    align-self: start;
+    font-family: var(--font-body);
+    color: var(--text-color-3);
+    background-color: var(--button-color-3);
+    letter-spacing: 1px;
+    padding: 10px 20px;     /* same size for all */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;           /* ✅ keeps width consistent even if text differs */
+    text-align: center;
+    gap: 5px;
+    border-radius: 50px;
+    justify-content: center;
+    border: none;
+    gap: 10px;
+}
+
+#login-btn{
+    background-color: white;
+    border: 2px solid var(--button-color-3);
+    color: var(--text-color-2);
+}
