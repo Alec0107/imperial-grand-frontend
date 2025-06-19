@@ -59,7 +59,6 @@
     background-color: var(--button-color-3);
     letter-spacing: 1px;
     padding: 10px 20px;     /* same size for all */
-    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     min-width: 120px;           /* ✅ keeps width consistent even if text differs */

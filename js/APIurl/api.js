@@ -17,6 +17,9 @@ export const API = {
          *  TODO: 
          **/
     }, 
+    contactUs: {
+        sendMsg: `${LOCALHOST_BASE_URL}/api/v1/contact`
+    },
     user: {
         profile: `${LOCALHOST_BASE_URL}/api/v1/auth/profile`
         /**

@@ -78,10 +78,9 @@ function setupLoginBtn(){
 async function submitLogin(){
   const rawDeviceId = getDeviceIdFromCookie();
   const loginUrl = API.authentication.login; // Backend URL for login endpoint
- 
-    const headers = {
-      "Content-Type" :  "application/json",
-    }
+  const headers = { 
+     "Content-Type" :  "application/json",
+  }
 
   if(rawDeviceId && rawDeviceId.trim() !== "" && rawDeviceId.trim().toLowerCase !== "null"){
     headers["x-device-id"] = rawDeviceId.trim();

@@ -8,6 +8,7 @@
 }
 
 html, body {
+  height: 100vh;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -15,63 +16,109 @@ html, body {
 }
 
 
+
 .contact-us{
-    height: 100vh;
+    height: auto;
     background-color: var(--background-color-7);
-    display: flex;
-    flex-direction: column;
-    
+    padding: 100px;
 }
 
 .contact-us-content{
-    margin: 0px auto;
-    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    height: 100%;
+    gap: 100px;
+} 
+
+.contact-us-header{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    height: 500px;
+    width: 35%;
+    padding: 50px;
+    gap: 20px;
+    background-color: var(--background-color-7);
 }
 
 .contact-us-header h1{
-    text-align: center;
+    text-align: start;
     color: var(--text-color-1);
-    font-family: var(--font-heading);
     letter-spacing: 1px;
-    font-weight: 400;
-    font-size: 4rem;
-    padding: 50px;
+    font-weight: 100;
+    font-size: 3rem;
+ 
+}
+.contact-us-header p{
+
+    color: var(--text-color-3);
+    line-height: 1.5;
+}
+
+.icons-container{
+    margin-top: 50px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    height: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.border{
+    border: 1px solid hsl(0, 1%, 72%);
 }
 
 
 .contact-us-form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    background-color: white;
+    gap: 20px;
+    padding: 30px 50px 50px;
+    width: 50%;
+    max-width: 800px;
+    border-radius: 20px;
 }
 
 .font{
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.8rem;
+}
+
+.how-can-we-help{
+    padding: 30px 0px;
+    font-size: 3rem;
+    font-weight: 100;
 }
 
 .contact-us-form input{
     width: 100%;
     padding: 15px;
     border-radius: 5px;
-    border: none;
 }
 
-.contact-us-form div button{
+#subject-btn{
     width: 100%;
     text-align: start;
     padding: 15px;
     position: relative;
     background-color: var(--background-color-3);
-    border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .contact-us-form div button svg{
     position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     right: 5px;
 }
 
@@ -86,11 +133,13 @@ html, body {
     display: block;
     position: absolute;
     z-index: 10;
-    width: 100%;
+    width: auto;
     height: auto;
-    border-radius: 5px;
     background-color: white;
-    top: 120%;
+    border: 1px solid black;
+    border-radius: 5px;
+    top: 110%;
+    right: 1px;
     padding: 5px;
 
     /* Transition setup */
@@ -111,7 +160,7 @@ html, body {
 .subject-options li{
     list-style: none;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .subject-options li:hover{
@@ -120,13 +169,28 @@ html, body {
 }
 
 
-
-
-#message{
+#message-input{
     min-height: 150px;
     vertical-align: top;
     padding: 15px;
     resize: none;
     overflow: hidden;
     line-height: 1.9;
+}
+
+
+
+#send-msg-btn{
+  width: auto;
+  align-self: flex-start; /* center it inside the flex column */
+  padding: 15px 30px;
+  background-color: var(--button-color-3);
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#send-msg-btn:hover{
+    background-color: var( --button-color-hover);
 }

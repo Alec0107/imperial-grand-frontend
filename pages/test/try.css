@@ -1,3 +1,18 @@
+:root{
+  --background-color: rgb(255, 255, 255);
+  --button-color: rgb(0, 0, 0);
+  --text-color: rgb(255, 255, 255);
+}
+
+body.dark{
+  --background-color: rgb(0, 0, 0);
+  --button-color: rgb(255, 255, 255);
+  --text-color: rgb(0, 0, 0);
+}
+
+
+
+
 *{
   box-sizing: border-box;
   margin: 0px;
@@ -5,13 +20,31 @@
 }
 
 
-html, body{
+body{
   font-size: 16px;
   letter-spacing: 1px;
   width: 100vw;
   height: 100vh;
   font-family: var(--font-body);
+  background-color: var(--background-color);
+  transition: background-color 0.7s ease ;
 }
+
+
+
+.btn{
+  padding: 50px;
+  border: none;
+  background-color: var(--button-color);
+  color: var(--text-color);
+}
+
+
+
+
+
+
+
 
 .modal{
     background-color: aqua;

@@ -1,7 +1,36 @@
-const fruits = ["banana", "strawberry", "mango", 2];
-let index = 0;
 
-setInterval(()=>{
-    console.log(fruits[index]);
-    index = (index + 1) % fruits.length;
-}, 1000);
+let body;
+initBody();
+initBtn();
+
+let isDark = false;
+
+function initBody(){
+    body = document.body;
+}
+
+function initBtn(){
+    const btn = document.querySelector(".btn");
+
+    btn.addEventListener("click", () => {
+        if(!isDark){
+            darkMode();
+        }else{
+           lightMode();
+        }
+    });
+
+}
+
+
+
+function darkMode(){
+    body.classList.add("dark");
+    isDark = true;
+}
+
+
+function lightMode(){
+    body.classList.remove("dark");
+    isDark = false;
+}
