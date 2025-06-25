@@ -24,14 +24,14 @@
 
 
 .text-info h1{
-    font-size: 2.6rem;
+    font-size: var(--font-xl);
     font-family: var(--font-heading);
     margin-top: 50px;
 }
 
 .text-info p{
     margin-top: 30px;
-    font-size: 1.1rem;
+    font-size: var(--font-sm);
     font-family: var(--font-body);
 }
 

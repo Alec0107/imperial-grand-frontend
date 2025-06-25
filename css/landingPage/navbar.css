@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--background-color-2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,9 +28,14 @@
     line-height: 20px;
 }
 
-.text-container p{
-    font-size: 0.8rem;
+.text-container h1{
+    font-size: var(--font-sm);
 }
+
+.text-container p{
+    font-size: var(--font-sm);
+}
+
 
 .logo-image{
     width: 70px;
@@ -45,7 +50,7 @@
 
 
 .nav-links li a span{
-    font-size: 1rem;
+    font-size: var(--font-sm);
     font-family: var(--font-body);
     cursor: pointer;
 }
@@ -55,6 +60,7 @@
 .auth-btn{
     align-self: start;
     font-family: var(--font-body);
+    font-size: var(--font-xsm);
     color: var(--text-color-3);
     background-color: var(--button-color-3);
     letter-spacing: 1px;

@@ -13,6 +13,7 @@ export const API = {
         refreshToken: `${LOCALHOST_BASE_URL}/api/v1/auth/refresh-token`
     },
     reservations: {
+        checkAvailability: `${LOCALHOST_BASE_URL}/api/v1/reservation/check-availability`
         /**
          *  TODO: 
          **/

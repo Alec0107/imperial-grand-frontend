@@ -50,7 +50,7 @@ html, body {
     color: var(--text-color-1);
     letter-spacing: 1px;
     font-weight: 100;
-    font-size: 3rem;
+    font-size: var(--font-xl);
  
 }
 .contact-us-header p{
@@ -91,7 +91,7 @@ html, body {
 
 .font{
     font-family: var(--font-body);
-    font-size: 0.8rem;
+    font-size: var(--font-sm)
 }
 
 .how-can-we-help{
@@ -116,11 +116,17 @@ html, body {
     border-radius: 5px;
 }
 
-.contact-us-form div button svg{
+.dropdown-arrow{
     position: absolute;
     bottom: 7px;
     right: 5px;
+    transition: transform 0.2s ease-in-out;
 }
+
+.dropdown-arrow.rotated{
+    transform: rotate(-180deg);
+}
+
 
 
 .dropdown {
@@ -136,7 +142,7 @@ html, body {
     width: auto;
     height: auto;
     background-color: white;
-    border: 1px solid black;
+
     border-radius: 5px;
     top: 110%;
     right: 1px;
@@ -160,7 +166,7 @@ html, body {
 .subject-options li{
     list-style: none;
     padding: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(244, 243, 243);
 }
 
 .subject-options li:hover{

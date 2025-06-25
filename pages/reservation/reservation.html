@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>Imperial Grand</title>
+        
+
+    <link rel="stylesheet" href="../../css/root/variable.css"> 
+    <link rel="stylesheet" href="../../css/landingPage/navbar.css">
+    <link rel="stylesheet" href="../../css/reservation/reservation.css">
+    <link rel="stylesheet" href="../../css/landingPage/navbar.css">
+    <link rel="stylesheet" href="../../components/reusable-buttons.css">
+
+    </head>
+
+    <body>
+
+            <header class="navbar">
+
+              <div id="logo">
+
+                <img class="logo-image" src="../../img/logo.png">
+                <div class="text-container">
+                  <h1 class="title">Imperial Grand</h1>
+                  <p class="subtitle">Cantonese Cuisine</p>
+                </div>
+                
+              </div>
+
+              <nav class="nav-links"> 
+                    <ul>
+                      <li><a><span>Home</span></a></li>
+                       <li><a><span>Our Story</span></a></li>
+                       <li><a><span>Menu</span></a></li>
+                       <li><a><span>Reserve</span></a></li>
+                       <li><a><span>Contact Us</span></a></li>
+                    </ul>
+              </nav>
+
+              <div id="auth-link">
+                  <a href="pages/authentication/auth.html?authType=login"><button class="auth-btn" id="login-btn">Login</button></a>
+                  <a href="pages/authentication/auth.html?authType=signup"><button class="auth-btn" id="signup-btn">Sign up</button></a>
+              </div>
+          </header>
+
+
+
+          <div class="reservation">
+
+            <!-- a div for calendar (on the right), people 
+            count and time (on the left 2 divs in a row)-->
+            
+            <!-- Step 1: User selects date, time and number of people-->
+            <div class="date-time-people steps"> 
+
+                <section class="calendar-section">
+
+                    <div class="calendar">
+
+                        <div class="month-selector-div">
+
+                            <svg class="prev-month" width="25px" height="20px" viewBox="-19.04 0 75.803 75.803" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_64" data-name="Group 64" transform="translate(-624.082 -383.588)"> <path id="Path_56" data-name="Path 56" d="M660.313,383.588a1.5,1.5,0,0,1,1.06,2.561l-33.556,33.56a2.528,2.528,0,0,0,0,3.564l33.556,33.558a1.5,1.5,0,0,1-2.121,2.121L625.7,425.394a5.527,5.527,0,0,1,0-7.807l33.556-33.559A1.5,1.5,0,0,1,660.313,383.588Z" fill="#ffffff"></path> </g> </g></svg>
+
+                            <p class="year-month font">May 2025</p>
+
+                            <svg class="next-month" width="25px" height="20px" viewBox="-19.04 0 75.804 75.804" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#ffffff"></path> </g> </g></svg>
+                        </div>
+
+                        <ul class="weekdays font">
+                            <li>Sun</li>
+                            <li>Mon</li>
+                            <li>Tue</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                        </ul>
+
+                        <div class="divider"></div>
+
+                        <div class="days" id="calendar-days">
+                                <!-- JS will insert day numbers here -->
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+                <section class="people-time-section">
+
+                  <div class="dropdown-div">
+
+                      <div class="dropdown">
+                        <p class="font">Number of People</p>
+                        <div class="text-div font" id="guest-dropdown">
+                            <span>1 person</span>
+                            <ul class="options">
+                                <li>1 person</li>
+                                <li>2 people</li>
+                                <li>3 people</li>
+                                <li>4 people</li>
+                                <li>5 people</li>
+                                <li>6 people</li>
+                                <li>7 people</li>
+                                <li>8 people</li>
+                                <li>9 people</li>
+                                <li>10 people</li>
+                            </ul>
+                            <svg  class="dropdown-arrow" width="64px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z" fill="#000000"></path> </g></svg>
+                        </div>
+                      </div>
+
+                      <div class="dropdown">
+                        <p class="font">Time</p>
+
+                        <div class="text-div font" id="time-dropdown">
+
+                            <span>Select</span>
+
+                            <ul class="options font">
+                                    <!-- Lunch slots -->
+                                  <li data-value="11:00">11:00 AM</li>
+                                  <li data-value="11:30">11:30 AM</li>
+                                  <li data-value="12:00">12:00 PM</li>
+                                  <li data-value="12:30">12:30 PM</li>
+                                  <li data-value="13:00">1:00 PM</li>
+                                  <li data-value="13:30">1:30 PM</li>
+                                  <li data-value="14:00">2:00 PM</li>
+                                  <li data-value="14:30">2:30 PM</li>
+
+                                  <!-- Dinner slots -->
+                                  <li data-value="18:00">6:00 PM</li>
+                                  <li data-value="18:30">6:30 PM</li>
+                                  <li data-value="19:00">7:00 PM</li>
+                                  <li data-value="19:30">7:30 PM</li>
+                                  <li data-value="20:00">8:00 PM</li>
+                                  <li data-value="20:30">8:30 PM</li>
+                                  <li data-value="21:00">9:00 PM</li>
+                                  <li data-value="21:30">9:30 PM</li>
+                                  <li data-value="22:00">10:00 PM</li>
+                                  <li data-value="22:30">10:30 PM</li>
+                            </ul>
+                            
+                            <svg  class="dropdown-arrow" width="64px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z" fill="#000000"></path> </g></svg>
+                        </div>
+                      </div>
+
+                  </div>
+                
+                  <div class="book-btn-div">
+                    <button class="reusable-btn">
+                      Book
+                    </button>
+                  </div>
+
+
+                </section>
+
+              
+            </div>
+
+            <!-- Step 2: User-->
+
+
+
+          </div>
+
+
+          <script src="../../js/reservation/reservation.js"></script>
+    </body>
+
+</html>

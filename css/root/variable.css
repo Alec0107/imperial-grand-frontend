@@ -10,6 +10,7 @@
     --background-color-6:#1a1919;
     --background-color-7:#611818;
     --background-color-8:#e0dfdf;
+    --background-color-9:#f2f2f2;
     --modal-background-1: #000000;
     --modal-background-2: #f3e1b6;
 
@@ -22,6 +23,7 @@
     --text-color-5: rgb(95, 95, 95);
     --text-color-6: #67d275;
     --text-color-7: #fff3d8;
+    --text-color-9: #d4cece;
     --text-color-error: #fa263f;
 
 
@@ -40,4 +42,15 @@
 
     /* border */
     --border-1:rgb(186, 186, 186)
+
+
+    /* font sizes */
+    --font-base: 1rem;
+    --font-xsm: 0.9rem; /* mostly used for buttons*/
+    --font-sm: 1rem;    /* mostly used for p tags*/
+    --font-lg: 2rem;
+    --font-xl: 3rem;
+    --font-xxl: 10rem;
+
 }
+

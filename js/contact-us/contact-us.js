@@ -4,6 +4,7 @@ import { API } from "../APIurl/api.js";
 let dropdownBtn;
 let subjectOption;
 let sendMsgBtn;
+let dropdownArrow;
 
 const contactUs = {
     valid: false,
@@ -31,16 +32,19 @@ function initGlobalVar(){
     dropdownBtn = document.getElementById("subject-btn");
     subjectOption = document.querySelector(".subject-options");
     sendMsgBtn = document.getElementById("send-msg-btn");
+    dropdownArrow = document.querySelector(".dropdown-arrow");
 }
 
 
 function openDropDown(){
     subjectOption.classList.add("open");
+    dropdownArrow.classList.add("rotated");
     isOpen = true;
 }
 
 function closeDropDown(){
-     subjectOption.classList.remove("open");
+    subjectOption.classList.remove("open");
+    dropdownArrow.classList.remove("rotated")
     isOpen = false;
 }
 
